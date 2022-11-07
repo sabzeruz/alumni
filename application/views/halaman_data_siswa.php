@@ -255,12 +255,17 @@
                         <th class="py-3 px-6 text-center">NO</th>
                         <!-- <th class="py-3 px-6 text-center">ID</th> -->
                         <th class="py-3 px-6 text-center">NIS</th>
-                        <th class="py-3 px-6 text-center">Nama Siswa</th>
+                        <th class="py-3 px-6 text-center">Nama Siswa1</th>
                         <th class="py-3 px-6 text-center">Kota Lahir</th>
                         <th class="py-3 px-6 text-center">Tanggal Lahir</th>
                         <th class="py-3 px-6 text-center">Kesan</th>
                         <th class="py-3 px-6 text-center">Jurusan</th>
                         <th class="py-3 px-6 text-center">Foto</th>
+                        <th class="py-3 px-6 text-center">Tahun Lulus</th>
+                        <th class="py-3 px-6 text-center">Instagram</th>
+                        <th class="py-3 px-6 text-center">Facebook</th>
+                        <th class="py-3 px-6 text-center">Twitter</th>
+                        <th class="py-3 px-6 text-center">Line</th>
                         <th class="py-3 px-6 text-center">Aksi</th>
 
                     </tr>
@@ -288,6 +293,11 @@
                                         <img class="img-fluid" width="50" height="50" src="<?= base_url('assets/upload/photo/' . $tampil->foto) ?>">
                                     <?php } ?>
                             </td>
+                            <td class="py-4 px-4 text-center"> <?= $tampil->tahun_lulus ?></td>
+                            <td class="py-4 px-4 text-center"> <?= $tampil->instagram ?></td>
+                            <td class="py-4 px-4 text-center"> <?= $tampil->facebook ?></td>
+                            <td class="py-4 px-4 text-center"> <?= $tampil->twitter ?></td>
+                            <td class="py-4 px-4 text-center"> <?= $tampil->line ?></td>
                             <td class="py-4 px-4 text-center text-center">
                                 <button class="btn text-center" data-bs-toggle="modal" data-bs-target="#edit<?= $tampil->id ?>"><a>EDIT</a></button>
                                 <button class="btn text-center" data-bs-toggle="modal" data-bs-target="#hapus_data<?= $tampil->id ?>"><a>HAPUS</a></button>

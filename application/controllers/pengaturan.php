@@ -64,14 +64,16 @@ class pengaturan extends CI_Controller
         $this->load->view('templates/footer');
     }
 
-    public function data_program_studi() {
+    public function data_program_studi()
+    {
         $this->load->view('templates/sidebar');
         $isi['jurusan'] = $this->pengaturan_model->ambil_jurusan(); //select * from supplier
         $this->load->view('halaman_data_jurusan', $isi);
         $this->load->view('templates/footer');
     }
 
-    public function data_program_siswa() {
+    public function data_program_siswa()
+    {
         $this->load->view('templates/sidebar');
         $isi['jurusan'] = $this->pengaturan_model->ambil_jurusan(); //select * from supplier
         $isi['siswa'] = $this->pengaturan_model->ambil_siswa(); //select * from supplier
@@ -161,7 +163,7 @@ class pengaturan extends CI_Controller
             $config['file_name']            = $file_name;
             $config['overwrite']            = true;
             $config['max_size']             = 1024; // 1MB
-        
+
 
             $this->load->library('upload', $config);
             $this->upload->initialize($config);
@@ -183,46 +185,46 @@ class pengaturan extends CI_Controller
     public function update_data()
     {
         $nis = $this->input->post('nis');
-		$nama_siswa = $this->input->post('nama_siswa');
-		$kota_lahir = $this->input->post('kota_lahir');
-		$tanggal_lahir = $this->input->post('tanggal_lahir');
-		$kesan = $this->input->post('kesan');
-		$jurusan = $this->input->post('jurusan'); 
-		$data = array(
-			'nis' => $nis,
-			'nama_siswa' => $nama_siswa,
-			'kota_lahir' => $kota_lahir,
-			'tanggal_lahir' => $tanggal_lahir,
-			'kesan' => $kesan,
-			'jurusan' => $jurusan,
-		);
+        $nama_siswa = $this->input->post('nama_siswa');
+        $kota_lahir = $this->input->post('kota_lahir');
+        $tanggal_lahir = $this->input->post('tanggal_lahir');
+        $kesan = $this->input->post('kesan');
+        $jurusan = $this->input->post('jurusan');
+        $data = array(
+            'nis' => $nis,
+            'nama_siswa' => $nama_siswa,
+            'kota_lahir' => $kota_lahir,
+            'tanggal_lahir' => $tanggal_lahir,
+            'kesan' => $kesan,
+            'jurusan' => $jurusan,
+        );
 
-		if (!(empty($_FILES['foto']['name']))) {
-			$file_name = $nis;
-			$config['upload_path']          = FCPATH . 'assets/upload/photo/';
-			$config['allowed_types']        = 'gif|jpg|jpeg|png';
-			$config['file_name']            = $file_name;
-			$config['overwrite']            = true;
-			// $config['max_size']             = 6044; // 1MB
-			// $config['max_width']            = 1080;
-			// $config['max_height']           = 1080;
+        if (!(empty($_FILES['foto']['name']))) {
+            $file_name = $nis;
+            $config['upload_path']          = FCPATH . 'assets/upload/photo/';
+            $config['allowed_types']        = 'gif|jpg|jpeg|png';
+            $config['file_name']            = $file_name;
+            $config['overwrite']            = true;
+            // $config['max_size']             = 6044; // 1MB
+            // $config['max_width']            = 1080;
+            // $config['max_height']           = 1080;
 
-			$this->load->library('upload', $config);
-			$this->upload->initialize($config);
+            $this->load->library('upload', $config);
+            $this->upload->initialize($config);
 
-			if (!$this->upload->do_upload('foto')) {
-				$pesan = $this->upload->display_errors();
-				$this->session->set_flashdata('gagal', $pesan);
-				redirect('pengaturan/data_program_siswa');
-			} else {
-				$uploaded_data = $this->upload->data();
-				$data['foto'] = $uploaded_data['file_name'];
-			}
-		}
-		
-		$this->pengaturan_model->update_data_siswa($nis, $data);
-		$this->session->set_flashdata('Edit', 'Data Has Been Edited');
-		redirect('pengaturan/data_program_siswa');
+            if (!$this->upload->do_upload('foto')) {
+                $pesan = $this->upload->display_errors();
+                $this->session->set_flashdata('gagal', $pesan);
+                redirect('pengaturan/data_program_siswa');
+            } else {
+                $uploaded_data = $this->upload->data();
+                $data['foto'] = $uploaded_data['file_name'];
+            }
+        }
+
+        $this->pengaturan_model->update_data_siswa($nis, $data);
+        $this->session->set_flashdata('Edit', 'Data Has Been Edited');
+        redirect('pengaturan/data_program_siswa');
     }
     public function update_jurusan()
     {
@@ -264,41 +266,52 @@ class pengaturan extends CI_Controller
         redirect(base_url('pengaturan/data_program_siswa'));
     }
 
-    public function buka_tja(){
+    public function buka_tja($tahun = null)
+    {
         $jurusan = 'TJA';
-        $data['jurusan']=$this->pengaturan_model->jurusan_filter($jurusan);
+        $data['tahun'] = $tahun;
+        $data['jurusan'] = $this->pengaturan_model->alumni_filter($jurusan, $tahun);
         $this->load->view('templates/sidebar');
         $this->load->view('V_alumni', $data);
         $this->load->view('templates/footer');
     }
 
-    public function buka_rpl(){
+    public function buka_rpl($tahun = null)
+    {
         $jurusan = 'RPL';
-        $data['jurusan']=$this->pengaturan_model->jurusan_filter($jurusan);
+        $data['tahun'] = $tahun;
+        $data['jurusan'] = $this->pengaturan_model->alumni_filter($jurusan, $tahun);
+        $data['jurusanku'] = "rpl";
         $this->load->view('templates/sidebar');
         $this->load->view('V_alumni', $data);
         $this->load->view('templates/footer');
     }
 
-    public function buka_mm(){
+    public function buka_mm($tahun = null)
+    {
         $jurusan = 'MM';
-        $data['jurusan']=$this->pengaturan_model->jurusan_filter($jurusan);
+        $data['tahun'] = $tahun;
+        $data['jurusan'] = $this->pengaturan_model->alumni_filter($jurusan, $tahun);
         $this->load->view('templates/sidebar');
         $this->load->view('V_alumni', $data);
         $this->load->view('templates/footer');
     }
 
-    public function buka_tkj(){
+    public function buka_tkj($tahun = null)
+    {
         $jurusan = 'TKJ';
-        $data['jurusan']=$this->pengaturan_model->jurusan_filter($jurusan);
+        $data['tahun'] = $tahun;
+        $data['jurusan'] = $this->pengaturan_model->alumni_filter($jurusan, $tahun);
         $this->load->view('templates/sidebar');
         $this->load->view('V_alumni', $data);
         $this->load->view('templates/footer');
     }
 
-    public function buka_animasi(){
+    public function buka_animasi($tahun = null)
+    {
         $jurusan = 'ANM';
-        $data['jurusan']=$this->pengaturan_model->jurusan_filter($jurusan);
+        $data['tahun'] = $tahun;
+        $data['jurusan'] = $this->pengaturan_model->alumni_filter($jurusan, $tahun);
         $this->load->view('templates/sidebar');
         $this->load->view('V_alumni', $data);
         $this->load->view('templates/footer');

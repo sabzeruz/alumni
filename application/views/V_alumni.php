@@ -26,8 +26,25 @@
         </div>
     </div>
 
+    
+    
+    
+    <div class="container">
+    <h6 class="m-0 font-weight-bold text-dark">Alumni Rekayasa Perangkat Lunak tahun :
+    <select name="tahun" id="tahun" style="height:30px; padding:0px 10px; margin-top:-3px;" onchange="change_status()">
+    <option <?php if ($tahun == null) echo "selected='selected'"; ?> value="">All</option>
+    <option <?php if ($tahun == "2021") echo "selected='selected'"; ?> value="2021">2021</option>
+    <option <?php if ($tahun == "2020") echo "selected='selected'"; ?> value="2020">2020</option>
+    <option <?php if ($tahun == "2019") echo "selected='selected'"; ?> value="2019">2019</option>
+    <option <?php if ($tahun == "2018") echo "selected='selected'"; ?> value="2018">2018</option>
+</select>
 
-<div class="container">
+<script>
+    function change_status() {
+        var tahun = document.getElementById('tahun').value;
+        window.location.href = "<?php echo base_url('pengaturan/buka_' . $jurusanku . "/") ?>" + tahun;
+    }
+</script>
     <div class="row">
         <?php foreach ($jurusan as $jur):
             if($jur->jurusan == 'RPL'){
@@ -53,7 +70,7 @@
             <a href="<?= base_url('assets/upload/photo/' . $jur->foto) ?>">
                 <div class="card <?= 'bg-' . $warna ?> mt-4 p-3" style="width: 18rem;">
                     <div class="p-3">
-                        <img src="<?= base_url("assets/upload/photo/$jur->foto") ?>" class="card-img-top img-fluid" alt="...">
+                        <img src="<?= base_url("assets/upload/photo/$jur->foto") ?>" class="card-img-top"  height="310px" alt="...">
                     </div>
                     </a>
                     <div class="card-body">

@@ -82,5 +82,25 @@
             $this->db->order_by('nama_siswa');
             return $this->db->get_where('siswa', ['jurusan' => $jurusan])->result();
         }
+
+        public function alumni_filter($jurusan, $tahun)
+    {
+        $this->db->select('*');
+        $this->db->from('siswa');
+        $this->db->where('jurusan =', $jurusan);
+        if ($tahun <> null) {
+            $this->db->where('tahun_lulus =', $tahun);
+        }
+        $this->db->order_by('nama_siswa');
+        $query = $this->db->get();
+        if ($query->num_rows() > 0) {
+            return $query->result();
+        } else {
+            return false;
+        }
+    }
+	
+	
+
     
     }   
