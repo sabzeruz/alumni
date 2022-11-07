@@ -8,7 +8,7 @@ class login_model extends CI_Model
         $email = $this->input->post('username', true);
         $password = $this->input->post('password', true);
 
-        $this->db->where('username', $email);
+        $this->db->where('username', $email);           
         $user = $this->db->get('user')->row_array();
 
         if ($user) {

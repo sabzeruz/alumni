@@ -11,6 +11,14 @@
 	<link rel="stylesheet" href="<?= base_url('assets/login/css/style.css')?>">
 
 	</head>
+
+	<?php if ($this->session->flashdata('pesan')) { ?>
+    <div class="alert alert-success">
+        <a href="#" class="close" data-dismiss="alert">&times;</a>
+        <strong>Informasi.!</strong> <?php echo $this->session->flashdata('pesan'); ?>
+    </div>
+<?php } ?>	
+
 	<body class="img js-fullheight" style="background-color: #1e1e2d ;">
 	<section class="ftco-section">
 		<div class="container">
