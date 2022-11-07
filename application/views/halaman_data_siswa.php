@@ -41,17 +41,26 @@
         </a>
     </header>
 
-    <div class="container justify-content-between d-flex justify-content-between align-items-center mb-3">
-        <div class="page-heading mt-4 align-items-center">
+    <div class="container-fluid justify-content-between d-flex justify-content-between align-items-center mb-3">
+
+    <div class="page-heading mt-4 align-items-center">
             <h3>Data Siswa</h3>
+        
+          
+            <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="<?= base_url('pengaturan/beranda') ?>">Beranda</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Pendataan</li>
+                        <li class="breadcrumb-item active" aria-current="page">Data Siswa</li>
+                    </ol>
+                </nav>
         </div>
-
-
-        <div class="d-flex align-items-center">
-            <div class="avatar avatar-xl">
-                <img src="<?= base_url('assets/images/faces/dendro.jpg') ?>" alt="Face 1">
+    
+    <div class="d-flex align-items-center">
+            <div class="avatar avatar-xl mb-3">
+                <img src="<?= base_url('assets/images/faces/dendro.jpg') ?>" alt="rukkhadevata">
             </div>
-            <div class="ms-3 name">
+            <div class="ms-3 name  p-3">
                 <h5 class="font-bold"> <?= $this->session->userdata('nama'); ?> </h5>
                 <p class="font-weight-light"> <?= $this->session->userdata('level'); ?>
                     <a href="<?= base_url('logout') ?>" class="bi bi-box-arrow-right"></a>
@@ -59,14 +68,23 @@
 
             </div>
         </div>
-    </div>
+       
 
-    <div id="content" class="p-4 p-md-5">
+
+      
+    </div>
+   
+    <div id="content" class="">
         <?php
         if ($this->session->userdata('level') == 'admin') { ?>
-            <button type="button" class="btn btn-success mb-2" data-bs-toggle="modal" data-bs-target="#addModal">ADD DATA (MODAL)</button>
+            <button type="button" class="btn btn-success"
+             data-bs-toggle="modal" data-bs-target="#addModal">
+             <i class="fas fa-plus"></i> Tambah Data
+        </button>
             &nbsp;
-            <a type="button" class="btn btn-success mb-2" href="javascript:printDiv('id-elemen-yang-ingin-di-print');">Print</a>
+            <a type="button" class="btn btn-primary" href="javascript:printDiv('id-elemen-yang-ingin-di-print');">
+            <i class="fa-solid fa-print"></i>    
+            Print</a>
         <?php } ?>
 
         <!-- Modal Add Product-->
@@ -138,7 +156,6 @@
         <!-- modal add product -->
         <?php
         if ($this->session->userdata('level') == 'admin') { ?>
-            <a href="<?= base_url('pengaturan/data_program_studi') ?>" class="btn btn-success mb-2 text-decoration-line-through">ADD DATA (FORM)</a>
         <?php } ?>
         <?php if ($this->session->flashdata('success')) { ?>
             <div class="alert alert-success">
@@ -248,7 +265,7 @@
   
 
 
-        <div class="table-responsive">
+        <div class="table-responsive scrollbar">
             <table class="table table-hover mb-0">
                 <thead class="">
                     <tr>

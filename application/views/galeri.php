@@ -13,7 +13,7 @@
 
 
         <div class="d-flex align-items-center">
-            <div class="avatar avatar-xl">
+            <div class="avatar avatar-xl mb-3">
                 <img src="<?= base_url('assets/images/faces/dendro.jpg') ?>" alt="Face 1">
             </div>
             <div class="ms-3 name">

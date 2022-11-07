@@ -271,6 +271,7 @@ class pengaturan extends CI_Controller
         $jurusan = 'TJA';
         $data['tahun'] = $tahun;
         $data['jurusan'] = $this->pengaturan_model->alumni_filter($jurusan, $tahun);
+        $data['jurusanku'] = "tja";
         $this->load->view('templates/sidebar');
         $this->load->view('V_alumni', $data);
         $this->load->view('templates/footer');

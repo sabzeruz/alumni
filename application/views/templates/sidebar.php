@@ -10,12 +10,28 @@
     <link rel="stylesheet" href="<?= base_url('assets/css/main/app-dark.css') ?>">
     <link rel="shortcut icon" href="<?= base_url('assets/images/logo/favicon.svg"') ?>" type="image/x-icon">
     <link rel="shortcut icon" href="<?= base_url('assets/images/logo/favicon.png"') ?>" type="image/png">
-
+    <script src="https://kit.fontawesome.com/56e0df19b0.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="<?= base_url('assets/css/shared/iconly.css') ?>">
-
+    
 </head>
 
-<body>
+<style>
+     .scrollbar::-webkit-scrollbar{
+    width: 10px;
+  }
+
+  .scrollbar::-webkit-scrollbar-track{
+    background-color: #151521;
+    border-radius: 100px;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb{
+    background-color: #dbdbdb;
+    border-radius: 100px;
+  }
+    </style>
+
+<body class="scrollbar">
     <div id="app">
         <div id="sidebar" class="active">
             <div class="sidebar-wrapper active">
