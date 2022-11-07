@@ -293,6 +293,7 @@ class pengaturan extends CI_Controller
         $data['tahun'] = $tahun;
         $data['jurusan'] = $this->pengaturan_model->alumni_filter($jurusan, $tahun);
         $this->load->view('templates/sidebar');
+        $data['jurusanku'] = "mm";
         $this->load->view('V_alumni', $data);
         $this->load->view('templates/footer');
     }
@@ -303,6 +304,7 @@ class pengaturan extends CI_Controller
         $data['tahun'] = $tahun;
         $data['jurusan'] = $this->pengaturan_model->alumni_filter($jurusan, $tahun);
         $this->load->view('templates/sidebar');
+        $data['jurusanku'] = "tkj";
         $this->load->view('V_alumni', $data);
         $this->load->view('templates/footer');
     }
@@ -313,6 +315,7 @@ class pengaturan extends CI_Controller
         $data['tahun'] = $tahun;
         $data['jurusan'] = $this->pengaturan_model->alumni_filter($jurusan, $tahun);
         $this->load->view('templates/sidebar');
+        $data['jurusanku'] = "anm";
         $this->load->view('V_alumni', $data);
         $this->load->view('templates/footer');
     }

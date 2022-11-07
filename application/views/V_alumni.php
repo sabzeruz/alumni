@@ -30,7 +30,7 @@
     
     
     <div class="container">
-    <h6 class="m-0 font-weight-bold text-dark">Alumni Rekayasa Perangkat Lunak tahun :
+    <h6 class="m-0 font-weight-bold text-dark">Alumni Jurusan tahun :
     <select name="tahun" id="tahun" style="height:30px; padding:0px 10px; margin-top:-3px;" onchange="change_status()">
     <option <?php if ($tahun == null) echo "selected='selected'"; ?> value="">All</option>
     <option <?php if ($tahun == "2021") echo "selected='selected'"; ?> value="2021">2021</option>
