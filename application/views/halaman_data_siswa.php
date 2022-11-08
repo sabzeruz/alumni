@@ -10,7 +10,7 @@
                 margin-left:120px; 
                 margin-right:120px;
                 margin-top:120px; 
-                margin-bottom:90px;
+                margin-bottom:10px;
             }
         }
 
@@ -243,15 +243,15 @@
                                         <img class="img-fluid" width="50" height="50" src="<?= base_url('assets/upload/photo/' . $tampil->foto) ?>">
                                     <?php } ?>
                             </td>
-                            <td class="py-4 px-4 text-center"> <?= $tampil->tahun_lulus ?></td>
+                            <td class="text-center"> <?= $tampil->tahun_lulus ?></td>
                             <td class="py-4 px-4 text-center"> <?= $tampil->instagram ?></td>
                             <td class="py-4 px-4 text-center"> <?= $tampil->facebook ?></td>
                             <td class="py-4 px-4 text-center"> <?= $tampil->twiter ?></td>
                             <td class="py-4 px-4 text-center"> <?= $tampil->line ?></td>
-                            <td class="py-4 px-4 text-center text-center">
+                            <!-- <td class="py-4 px-4 text-center text-center">
                                 <button class="btn text-center" data-bs-toggle="modal" data-bs-target="#edit<?= $tampil->id ?>"><a>EDIT</a></button>
                                 <button class="btn text-center" data-bs-toggle="modal" data-bs-target="#hapus_data<?= $tampil->id ?>"><a>HAPUS</a></button>
-                            </td>
+                            </td> -->
 
                         </tr>
                     <?php
@@ -265,14 +265,14 @@
   
 
 
-        <div class="table-responsive scrollbar">
+        <div class="table-responsive scrollbar-x">
             <table class="table table-hover mb-0">
                 <thead class="">
                     <tr>
                         <th class="py-3 px-6 text-center">NO</th>
                         <!-- <th class="py-3 px-6 text-center">ID</th> -->
                         <th class="py-3 px-6 text-center">NIS</th>
-                        <th class="py-3 px-6 text-center">Nama Siswa1</th>
+                        <th class="py-3 px-6 text-center">Nama Siswa</th>
                         <th class="py-3 px-6 text-center">Kota Lahir</th>
                         <th class="py-3 px-6 text-center">Tanggal Lahir</th>
                         <th class="py-3 px-6 text-center">Kesan</th>

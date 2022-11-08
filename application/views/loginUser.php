@@ -12,12 +12,7 @@
 
 	</head>
 
-	<?php if ($this->session->flashdata('pesan')) { ?>
-    <div class="alert alert-success">
-        <a href="#" class="close" data-dismiss="alert">&times;</a>
-        <strong>Informasi.!</strong> <?php echo $this->session->flashdata('pesan'); ?>
-    </div>
-<?php } ?>	
+	
 
 	<body class="img js-fullheight" style="background-color: #1e1e2d ;">
 	<section class="ftco-section">
@@ -32,6 +27,12 @@
 				<div class="col-md-6 col-lg-4">
 					<div class="login-wrap p-0">
 		      	<h3 class="mb-4 text-center">LOGIN</h3>
+				  <?php if ($this->session->flashdata('pesan')) { ?>
+    <div class="alert alert-danger">
+        <a href="#" class="close" data-dismiss="alert" role="alert">&times;</a>
+		<i class="fa fa-circle fa-1" aria-hidden="true"></i> <?php echo $this->session->flashdata('pesan'); ?>
+    </div>
+<?php } ?>	
               <form method="POST" action="<?= base_url('login') ?>" class="needs-validation">
 		      	<form action="#" class="signin-form">
 		      		<div class="form-group">
@@ -46,10 +47,6 @@
 	            </div>
 	            <div class="form-group d-md-flex">
 	            	<div class="w-50">
-		            	<label class="checkbox-wrap checkbox-primary">Remember Me
-									  <input type="checkbox" checked>
-									  <span class="checkmark"></span>
-									</label>
 								</div>
 								<div class="w-50 text-md-right">
 									<a href="#" style="color: #fff">Forgot Password</a>

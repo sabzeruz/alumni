@@ -6,13 +6,14 @@ class login_model extends CI_Model
     public function go_login()
     {
         $email = $this->input->post('username', true);
-        $password = $this->input->post('password', true);
+        $pw = $this->input->post('password', true);
 
-        $this->db->where('username', $email);           
+        $this->db->where('username', $email); 
+        $this->db->where('password', $pw);      
         $user = $this->db->get('user')->row_array();
 
         if ($user) {
-            if (md5($password, $user['password'])) {
+            if (md5($pw, $user['password'])) {
                 $data = [
                     'id_user' => $user['id_user'],
                     'nama' => $user['nama'],
@@ -22,12 +23,9 @@ class login_model extends CI_Model
                 ];
                 $this->session->set_userdata($data);
                 redirect('pengaturan');
-            } else {
-                $this->session->set_flashdata('pesan', 'Password Salah...');
-                redirect('login');
-            }
+            } 
         } else {
-            $this->session->set_flashdata('pesan', 'Username tidak terdaftar...');
+            $this->session->set_flashdata('pesan', 'Password anda salah!');
             redirect('login');
         }
     }

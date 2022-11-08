@@ -42,7 +42,7 @@
                                 </div>
                                 <div class="col-md-8 col-lg-12 col-xl-12">
                                     <h6 class="text-muted font-semibold text-center">TEKNIK JARINGAN AKSES</h6>
-                                    <h6 class="font-extrabold mb-0 text-center">19 Orang</h6>
+                                    <h6 class="font-extrabold mb-0 text-center"><?= $tja ?> Orang</h6>
                                 </div>
                             </div>
                         </div>
@@ -60,7 +60,7 @@
                                 </div>
                                 <div class="col-md-8 col-lg-12 col-xl-12">
                                     <h6 class="text-muted font-semibold text-center">TEKNIK KOMPUTER & JARINGAN</h6>
-                                    <h6 class="font-extrabold mb-0 text-center">17 Orang</h6>
+                                    <h6 class="font-extrabold mb-0 text-center"><?= $tkj ?> Orang</h6>
                                 </div>
                             </div>
                         </div>
@@ -79,7 +79,7 @@
                                 </div>
                                 <div class="col-md-8 col-lg-12 col-xl-12">
                                     <h6 class="text-muted font-semibold text-center">MULTIMEDIA</h6>
-                                    <h6 class="font-extrabold mb-0 text-center">16 Orang</h6>
+                                    <h6 class="font-extrabold mb-0 text-center"><?= $mm ?> Orang</h6>
                                 </div>
                             </div>
                         </div>
@@ -97,7 +97,7 @@
                                 </div>
                                 <div class="col-md-8 col-lg-12 col-xl-12">
                                     <h6 class="text-muted font-semibold text-center">REKAYASA PERANGKAT LUNAK</h6>
-                                    <h6 class="font-extrabold mb-0 text-center">18 Orang</h6>
+                                    <h6 class="font-extrabold mb-0 text-center"><?= $rpl ?> Orang</h6>
                                 </div>
                             </div>
                         </div>

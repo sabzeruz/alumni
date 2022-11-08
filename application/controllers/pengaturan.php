@@ -18,8 +18,13 @@ class pengaturan extends CI_Controller
     public function beranda()
     {
         $this->load->view('templates/sidebar');
-        $isi['jurusan'] = $this->pengaturan_model->panggil(); //select * from supplier
-        $this->load->view('halaman_utama', $isi);
+        $data['rpl'] = $this->pengaturan_model->jumlah_rpl();
+        $data['tkj'] = $this->pengaturan_model->jumlah_tkj();
+        $data['tja'] = $this->pengaturan_model->jumlah_tja();
+        $data['mm'] = $this->pengaturan_model->jumlah_mm();
+        $data['anm'] = $this->pengaturan_model->jumlah_anm();
+        $data['jurusan'] = $this->pengaturan_model->panggil(); //select * from supplier
+        $this->load->view('halaman_utama', $data);
         $this->load->view('templates/footer');
     }
 
@@ -319,5 +324,25 @@ class pengaturan extends CI_Controller
         $data['jurusanku'] = "anm";
         $this->load->view('halaman_data_alumni', $data);
         $this->load->view('templates/footer');
+    }
+
+    public function jumlah_rpl(){
+        return $this->db->get_where('siswa', ['jurusan' => 'RPL'])->num_rows();
+
+    }
+    public function jumlah_tkj(){
+        return $this->db->get_where('siswa', ['jurusan' => 'TKJ'])->num_rows();
+    }
+
+    public function jumlah_tja(){
+        return $this->db->get_where('siswa', ['jurusan' => 'TJA'])->num_rows();
+    }
+
+    public function jumlah_mm(){
+        return $this->db->get_where('siswa', ['jurusan' => 'MM'])->num_rows();
+    }
+
+    public function jumlah_anm(){
+        return $this->db->get_where('siswa', ['jurusan' => 'MM'])->num_rows();
     }
 }

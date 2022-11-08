@@ -100,7 +100,24 @@
         }
     }
 	
-	
+    public function jumlah_rpl(){
+        return $this->db->get_where('siswa', ['jurusan' => 'RPL'])->num_rows();
 
+    }
+    public function jumlah_tkj(){
+        return $this->db->get_where('siswa', ['jurusan' => 'TKJ'])->num_rows();
+    }
+
+    public function jumlah_tja(){
+        return $this->db->get_where('siswa', ['jurusan' => 'TJA'])->num_rows();
+    }
+
+    public function jumlah_mm(){
+        return $this->db->get_where('siswa', ['jurusan' => 'MM'])->num_rows();
+    }
+	
+    public function jumlah_anm(){
+        return $this->db->get_where('siswa', ['jurusan' => 'ANM'])->num_rows();
+    }
     
     }   

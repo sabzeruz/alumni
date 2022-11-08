@@ -30,6 +30,20 @@
     border-radius: 100px;
   }
 
+  .scrollbar-x::-webkit-scrollbar{
+    width: 5px;
+  }
+
+  .scrollbar-x::-webkit-scrollbar-track{
+    background-color: #151521;
+    border-radius: 100px;
+  }
+
+  .scrollbar-x::-webkit-scrollbar-thumb{
+    background-color: #dbdbdb;
+    border-radius: 100px;
+  }
+
   .carousel-control-prev-icon{
  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
 }
