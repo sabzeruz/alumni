@@ -84,7 +84,7 @@
             &nbsp;
             <a type="button" class="btn btn-primary" href="javascript:printDiv('id-elemen-yang-ingin-di-print');">
             <i class="fa-solid fa-print"></i>    
-            Print</a>
+            Cetak</a>
         <?php } ?>
 
         <!-- Modal Add Product-->
