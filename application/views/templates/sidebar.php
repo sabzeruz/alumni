@@ -12,6 +12,7 @@
     <link rel="shortcut icon" href="<?= base_url('assets/images/logo/favicon.png"') ?>" type="image/png">
     <script src="https://kit.fontawesome.com/56e0df19b0.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="<?= base_url('assets/css/shared/iconly.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/extensions/toastify-js/src/toastify.css')?>">
     
 </head>
 

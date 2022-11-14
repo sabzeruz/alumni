@@ -10,6 +10,11 @@ class pengaturan extends CI_Controller
     public function index()
     {
         $this->load->view('templates/sidebar');
+        $data['rpl'] = $this->pengaturan_model->jumlah_rpl();
+        $data['tkj'] = $this->pengaturan_model->jumlah_tkj();
+        $data['tja'] = $this->pengaturan_model->jumlah_tja();
+        $data['mm'] = $this->pengaturan_model->jumlah_mm();
+        $data['anm'] = $this->pengaturan_model->jumlah_anm();
         $isi['jurusan'] = $this->pengaturan_model->panggil(); //select * from supplier
         $this->load->view('halaman_utama', $isi);
         $this->load->view('templates/footer');

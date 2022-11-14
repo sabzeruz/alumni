@@ -9,7 +9,8 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	
 	<link rel="stylesheet" href="<?= base_url('assets/login/css/style.css')?>">
-
+	
+	<link rel="stylesheet" href="<?= base_url ('assets/extensions/toastify-js/src/toastify.css')?>">
 	</head>
 
 	
@@ -43,15 +44,15 @@
 	              <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
 	            </div>
 	            <div class="form-group">
-	            	<button type="submit" class="form-control btn btn-primary submit px-3">Sign In</button>
+	            	<button type="submit" id="top-center" class="form-control btn btn-primary submit px-3">Sign In</button>
 	            </div>
-	            <div class="form-group d-md-flex">
-	            	<div class="w-50">
-								</div>
-								<div class="w-50 text-md-right">
-									<a href="#" style="color: #fff">Forgot Password</a>
-								</div>
-	            </div>
+					<!-- <div class="form-group d-md-flex">
+						<div class="w-50">
+									</div>
+									<div class="w-50 text-md-right">
+										<a href="#" style="color: #fff">Forgot Password</a>
+									</div>
+					</div> -->
 	          </form>
 	          <!-- <p class="w-100 text-center">&mdash; Or Sign In With &mdash;</p> -->
 	          <div class="social d-flex text-center">
@@ -68,6 +69,7 @@
   <script src="<?= base_url('/assets/login/js/popper.js')?>"></script>
   <script src="<?= base_url('/assets/login/js/bootstrap.min.js')?>"></script>
   <script src="<?= base_url('/assets/login/js/main.js')?>"></script>
+ 
 
 	</body>
 </html>

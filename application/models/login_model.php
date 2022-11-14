@@ -22,10 +22,10 @@ class login_model extends CI_Model
                     'login' => 1,
                 ];
                 $this->session->set_userdata($data);
-                redirect('pengaturan');
+                redirect('pengaturan/beranda');
             } 
         } else {
-            $this->session->set_flashdata('pesan', 'Password anda salah!');
+            $this->session->set_flashdata('pesan', 'Data anda tidak ditemukan di database!');
             redirect('login');
         }
     }

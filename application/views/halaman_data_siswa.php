@@ -235,13 +235,13 @@
                             <td class="py-4 px-4 text-center"> <?= $tampil->kesan ?></td>
                             <td class="py-4 px-4 text-center"> <?= $tampil->jurusan ?></td>
                             <td class="py-4 px-4 text-center">
-                                <?php
-                                if (($tampil->foto == '') or ($tampil->foto == '-')) {
-                                    echo "No Photo";
-                                } else { ?>
-                                    <a href="<?= base_url('assets/upload/photo/' . $tampil->foto) ?>">
-                                        <img class="img-fluid" width="50" height="50" src="<?= base_url('assets/upload/photo/' . $tampil->foto) ?>">
-                                    <?php } ?>
+                            <?php if (($data->foto == '') or ($data->foto == '-')) { ?>
+    <img src="<?= base_url('assets/images/default.jpg') ?>" class="card-img-top" style="height:221px;">
+<?php } else { ?>
+    <img src="<?= base_url('assets/upload/photo/' . $data->foto) ?>" class="card-img-top" style="height:221px;">
+<?php } ?>
+
+
                             </td>
                             <td class="text-center"> <?= $tampil->tahun_lulus ?></td>
                             <td class="py-4 px-4 text-center"> <?= $tampil->instagram ?></td>
@@ -307,7 +307,7 @@
                                     echo "No Photo";
                                 } else { ?>
                                     <a href="<?= base_url('assets/upload/photo/' . $tampil->foto) ?>">
-                                        <img class="rounded d-blockimg-thumbnail" width="100px" height="150px" src="<?= base_url('assets/upload/photo/' . $tampil->foto) ?>">
+                                        <img class="rounded d-blockimg-thumbnail" width="125px" height="150px" src="<?= base_url('assets/upload/photo/' . $tampil->foto) ?>">
                                     <?php } ?>
                             </td>
                             <td class="py-4 px-4 text-center"> <?= $tampil->tahun_lulus ?></td>
