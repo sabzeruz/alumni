@@ -167,7 +167,7 @@ class pengaturan extends CI_Controller
 
 
         if (!(empty($_FILES['foto']['name']))) {
-            $file_name = $id;
+            $file_name = $nis;
             $config['upload_path']          = FCPATH . 'assets/upload/photo/';
             $config['allowed_types']        = 'gif|jpg|jpeg|png';
             $config['file_name']            = $file_name;

@@ -27,7 +27,7 @@
 			<div class="row justify-content-center">
 				<div class="col-md-6 col-lg-4">
 					<div class="login-wrap p-0">
-		      	<h3 class="mb-4 text-center">LOGIN</h3>
+		      	<h3 class="mb-4 text-center font-weight-bold">LOGIN</h3>
 				  <?php if ($this->session->flashdata('pesan')) { ?>
     <div class="alert alert-danger">
         <a href="#" class="close" data-dismiss="alert" role="alert">&times;</a>
@@ -43,16 +43,17 @@
 	              <input id="password-field" type="password" class="form-control" name="password"  placeholder="Password" required>
 	              <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
 	            </div>
+				<br>
 	            <div class="form-group">
 	            	<button type="submit" id="top-center" class="form-control btn btn-primary submit px-3">Sign In</button>
 	            </div>
-					<!-- <div class="form-group d-md-flex">
+					<div class="form-group d-md-flex">
 						<div class="w-50">
 									</div>
 									<div class="w-50 text-md-right">
-										<a href="#" style="color: #fff">Forgot Password</a>
+										<a href="#" style="color: #fff">Register</a>
 									</div>
-					</div> -->
+					</div>
 	          </form>
 	          <!-- <p class="w-100 text-center">&mdash; Or Sign In With &mdash;</p> -->
 	          <div class="social d-flex text-center">

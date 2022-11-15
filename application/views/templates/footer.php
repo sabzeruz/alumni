@@ -1,10 +1,10 @@
 <footer>
     <div class="footer clearfix mb-0 mt-3 text-muted">
         <div class="float-start">
-            <p>2022 &copy; Krenze</p>
+            <p>2022 &copy; Sabzeruz</p>
         </div>
         <div class="float-end">
-            <p>Modified with <span class="text-danger"><i class="bi bi-heart"></i></span> by <a href="https://wakatime.com/@krenze">Krenze</a></p>
+            <p>Modified with <span class="text-danger"><i class="bi bi-heart"></i></span> by <a href="https://github.com/sabzeruz">Sabzeruz</a></p>
         </div>
     </div>
 </footer>

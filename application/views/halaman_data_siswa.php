@@ -14,7 +14,7 @@
             }
         }
 
-        <?php 
+        <?php
         include('assets/css/main/app-dark.css');
         include('assets/css/main/app.css');
         ?>
@@ -43,20 +43,20 @@
 
     <div class="container-fluid justify-content-between d-flex justify-content-between align-items-center mb-3">
 
-    <div class="page-heading mt-4 align-items-center">
+        <div class="page-heading mt-4 align-items-center">
             <h3>Data Siswa</h3>
-        
-          
+
+
             <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="<?= base_url('pengaturan/beranda') ?>">Beranda</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Pendataan</li>
-                        <li class="breadcrumb-item active" aria-current="page">Data Siswa</li>
-                    </ol>
-                </nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="<?= base_url('pengaturan/beranda') ?>">Beranda</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Pendataan</li>
+                    <li class="breadcrumb-item active" aria-current="page">Data Siswa</li>
+                </ol>
+            </nav>
         </div>
-    
-    <div class="d-flex align-items-center">
+
+        <div class="d-flex align-items-center">
             <div class="avatar avatar-xl mb-3">
                 <img src="<?= base_url('assets/images/faces/dendro.jpg') ?>" alt="rukkhadevata">
             </div>
@@ -68,23 +68,22 @@
 
             </div>
         </div>
-       
 
 
-      
+
+
     </div>
-   
-    <div id="content" class="">
+
+    <div id="content" class="mb-4">
         <?php
         if ($this->session->userdata('level') == 'admin') { ?>
-            <button type="button" class="btn btn-success"
-             data-bs-toggle="modal" data-bs-target="#addModal">
-             <i class="fas fa-plus"></i> Tambah Data
-        </button>
+            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addModal">
+                <i class="fas fa-plus"></i> Tambah Data
+            </button>
             &nbsp;
             <a type="button" class="btn btn-primary" href="javascript:printDiv('id-elemen-yang-ingin-di-print');">
-            <i class="fa-solid fa-print"></i>    
-            Cetak</a>
+                <i class="fa-solid fa-print"></i>
+                Cetak</a>
         <?php } ?>
 
         <!-- Modal Add Product-->
@@ -192,77 +191,81 @@
             </div>
         <?php } ?>
 
+        <!-- PRINT START -->
+
         <div class="d-none">
-    <div id="id-elemen-yang-ingin-di-print"> 
+            <div id="id-elemen-yang-ingin-di-print">
 
-    <div class="text-center font-weight-bold text-black">
-      Data Alumni <br> SMK TELKOM BANJARBARU
-    </div>
-    <div class="table-responsive">
-            <table class="table table-hover mb-0">
-                <thead class="">
-                    <tr>
-                        <th class="py-3 px-6 text-center">NO</th>
-                        <!-- <th class="py-3 px-6 text-center">ID</th> -->
-                        <th class="py-3 px-6 text-center">NIS</th>
-                        <th class="py-3 px-6 text-center">Nama Siswa</th>
-                        <th class="py-3 px-6 text-center">Kota Lahir</th>
-                        <th class="py-3 px-6 text-center">Tanggal Lahir</th>
-                        <th class="py-3 px-6 text-center">Kesan</th>
-                        <th class="py-3 px-6 text-center">Jurusan</th>
-                        <th class="py-3 px-6 text-center">Foto</th>
-                        <th class="py-3 px-6 text-center">Tahun Lulus</th>
-                        <th class="py-3 px-6 text-center">Instagram</th>
-                        <th class="py-3 px-6 text-center">Facebook</th>
-                        <th class="py-3 px-6 text-center">Twitter</th>
-                        <th class="py-3 px-6 text-center">Line</th>
-                        <th class="py-3 px-6 text-center">Aksi</th>
+                <div class="text-center font-weight-bold text-black">
+                    Data Alumni <br> SMK TELKOM BANJARBARU
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-hover mb-0">
+                        <thead class="">
+                            <tr>
+                                <th class="py-3 px-6 text-center">NO</th>
+                                <!-- <th class="py-3 px-6 text-center">ID</th> -->
+                                <th class="py-3 px-6 text-center">NIS</th>
+                                <th class="py-3 px-6 text-center">Nama Siswa</th>
+                                <th class="py-3 px-6 text-center">Kota Lahir</th>
+                                <th class="py-3 px-6 text-center">Tanggal Lahir</th>
+                                <th class="py-3 px-6 text-center">Kesan</th>
+                                <th class="py-3 px-6 text-center">Jurusan</th>
+                                <th class="py-3 px-6 text-center">Foto</th>
+                                <th class="py-3 px-6 text-center">Tahun Lulus</th>
+                                <th class="py-3 px-6 text-center">Instagram</th>
+                                <th class="py-3 px-6 text-center">Facebook</th>
+                                <th class="py-3 px-6 text-center">Twitter</th>
+                                <th class="py-3 px-6 text-center">Line</th>
+                                <th class="py-3 px-6 text-center">Aksi</th>
 
-                    </tr>
-                </thead>
-                <?php
-                $no = 1;
-                foreach ($siswa as $tampil) : // :(titik dua) = begin = endforeach;
-                ?>
-                    <tbody>
-                        <tr class="">
-                            <td class="py-4 px-4 text-center"><?= $no++ ?></td>
-                            <!-- <td class="py-4 px-4 text-center"> <?= $tampil->id ?></td> -->
-                            <td class="py-4 px-4 text-center"> <?= $tampil->nis ?></td>
-                            <td class="py-4 px-4 text-center"> <?= $tampil->nama_siswa ?></td>
-                            <td class="py-4 px-4 text-center"> <?= $tampil->kota_lahir ?></td>
-                            <td class="py-4 px-4 text-center"> <?= $tampil->tanggal_lahir ?></td>
-                            <td class="py-4 px-4 text-center"> <?= $tampil->kesan ?></td>
-                            <td class="py-4 px-4 text-center"> <?= $tampil->jurusan ?></td>
-                            <td class="py-4 px-4 text-center">
-                            <?php if (($data->foto == '') or ($data->foto == '-')) { ?>
-    <img src="<?= base_url('assets/images/default.jpg') ?>" class="card-img-top" style="height:221px;">
-<?php } else { ?>
-    <img src="<?= base_url('assets/upload/photo/' . $data->foto) ?>" class="card-img-top" style="height:221px;">
-<?php } ?>
+                            </tr>
+                        </thead>
+                        <?php
+                        $no = 1;
+                        foreach ($siswa as $tampil) : // :(titik dua) = begin = endforeach;
+                        ?>
+                            <tbody>
+                                <tr class="">
+                                    <td class="py-4 px-4 text-center"><?= $no++ ?></td>
+                                    <!-- <td class="py-4 px-4 text-center"> <?= $tampil->id ?></td> -->
+                                    <td class="py-4 px-4 text-center"> <?= $tampil->nis ?></td>
+                                    <td class="py-4 px-4 text-center"> <?= $tampil->nama_siswa ?></td>
+                                    <td class="py-4 px-4 text-center"> <?= $tampil->kota_lahir ?></td>
+                                    <td class="py-4 px-4 text-center"> <?= $tampil->tanggal_lahir ?></td>
+                                    <td class="py-4 px-4 text-center"> <?= $tampil->kesan ?></td>
+                                    <td class="py-4 px-4 text-center"> <?= $tampil->jurusan ?></td>
+                                    <td class="py-4 px-4 text-center">
+                                        <?php if (($tampil->foto == '') or ($tampil->foto == '-')) { ?>
+                                            <img src="<?= base_url('assets/images/default.jpg') ?>" class="card-img-top" style="height:221px;">
+                                        <?php } else { ?>
+                                            <img src="<?= base_url('assets/upload/photo/' . $tampil->foto) ?>" class="card-img-top" style="height:221px;">
+                                        <?php } ?>
 
 
-                            </td>
-                            <td class="text-center"> <?= $tampil->tahun_lulus ?></td>
-                            <td class="py-4 px-4 text-center"> <?= $tampil->instagram ?></td>
-                            <td class="py-4 px-4 text-center"> <?= $tampil->facebook ?></td>
-                            <td class="py-4 px-4 text-center"> <?= $tampil->twiter ?></td>
-                            <td class="py-4 px-4 text-center"> <?= $tampil->line ?></td>
-                            <!-- <td class="py-4 px-4 text-center text-center">
+                                    </td>
+                                    <td class="text-center"> <?= $tampil->tahun_lulus ?></td>
+                                    <td class="py-4 px-4 text-center"> <?= $tampil->instagram ?></td>
+                                    <td class="py-4 px-4 text-center"> <?= $tampil->facebook ?></td>
+                                    <td class="py-4 px-4 text-center"> <?= $tampil->twiter ?></td>
+                                    <td class="py-4 px-4 text-center"> <?= $tampil->line ?></td>
+                                    <!-- <td class="py-4 px-4 text-center text-center">
                                 <button class="btn text-center" data-bs-toggle="modal" data-bs-target="#edit<?= $tampil->id ?>"><a>EDIT</a></button>
                                 <button class="btn text-center" data-bs-toggle="modal" data-bs-target="#hapus_data<?= $tampil->id ?>"><a>HAPUS</a></button>
                             </td> -->
 
-                        </tr>
-                    <?php
-                endforeach;
-                    ?>
-                    </tbody>
-            </table>
+                                </tr>
+                            <?php
+                        endforeach;
+                            ?>
+                            </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
-    </div>  
-    </div>
-  
+
+                            <!-- PRINT END -->
+
 
 
         <div class="table-responsive scrollbar-x">
@@ -304,10 +307,14 @@
                             <td class="py-4 px-4 text-center">
                                 <?php
                                 if (($tampil->foto == '') or ($tampil->foto == '-')) {
-                                    echo "No Photo";
+                                ?>
+                                <button data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    <img src="<?= base_url('assets/images/default.jpg') ?>" class="card-img-top" data-bs-toggle="modal" data-bs-target="#exampleModal" style="height:221px;">
+                                </button>
+                                <?php
                                 } else { ?>
-                                    <a href="<?= base_url('assets/upload/photo/' . $tampil->foto) ?>">
-                                        <img class="rounded d-blockimg-thumbnail" width="125px" height="150px" src="<?= base_url('assets/upload/photo/' . $tampil->foto) ?>">
+                                    <button data-toggle="modal" data-bs-target="#exampleModal" href="<?= base_url('assets/upload/photo/' . $tampil->foto) ?>">
+                                        <img class="rounded d-blockimg-thumbnail" width="125px" height="150px" data-bs-toggle="modal" data-bs-target="#exampleModal" src="<?= base_url('assets/upload/photo/' . $tampil->foto) ?>">
                                     <?php } ?>
                             </td>
                             <td class="py-4 px-4 text-center"> <?= $tampil->tahun_lulus ?></td>
@@ -390,15 +397,15 @@
                                 <label>Photo</label>
                                 <input type="file" class="form-control" placeholder="Uploaded Foto" name="foto" value="<?= $edit_data->foto ?>" name="foto">
                             </div>
-                        
+
                     </div>
-                    
+
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                         <button type="submit" class="btn btn-primary">Save</button>
                     </div>
-                    </div>    
                 </div>
+            </div>
         </div>
         </form>
     <?php
@@ -441,9 +448,45 @@
             </div>
         </div>
 
-        <?php
+    <?php
     endforeach
-        ?>
-
+    ?>
 
         <!-- modal delete product -->
+
+<?php
+  $no = 1;
+    foreach ($siswa as $view_foto) : // :(titik dua) = begin = endforeach;
+    ?>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <?php
+                                if (($view_foto->foto == '') or ($view_foto->foto == '-')) {
+                                ?>
+                                    <img src="<?= base_url('assets/images/default.jpg') ?>"  style="height:221px;">
+                            
+                                <?php
+                                } else { ?>
+                                        <img class="rounded d-blockimg-thumbnail" width="125px" height="150px"   src="<?= base_url('assets/upload/photo/' . $view_foto->foto) ?>">
+                                    <?php } ?>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<?php
+                endforeach;
+                    ?>

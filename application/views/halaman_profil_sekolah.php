@@ -31,11 +31,11 @@
 
         <div class="col-xl-6 col-md-6 col-sm-12">
             <div class="card">
-                <div class="card-content">
+                <div class="card-horizontal">
                     <img src="<?= base_url('assets/images/samples/telkom.jpg') ?>" class="card-img-top img-fluid" alt="singleminded">
                     <div class="card-body">
                         <h5 class="card-title">SMK Telkom Banjarbaru</h5>
-                        <p class="card-text">
+                        <p class="card-text text-rig">
                             Sekolah Menengah Kejuruan Telekomunikasi (SMK Telkom) Sandhy Putra Banjarbaru adalah lembaga pendidikan yang dikelola oleh Yayasan Sandhykara Putra Telkom dengan kantor Pusat di Bandung. Sekolah ini, telah beroperasi sejak tahun 1999, diresmikan oleh Direktur Utama PT Telkom (AA. Nasution) pada 13 Maret 2000. Surat Keputusan Ijin Pendirian No: Kep 52/15.a3/MN 99 dengan Nomor Statistik Sekolah (NSS) 324151011005 dan Nomor Data Sekolah (NDS) 4215220006. &nbsp; <br><br>
                             SMK Telkom Sandhy Putra Banjarbaru merupakan Sekolah Menengah Kejuruan pertama dan satu-satunya di Kalimantan yang menyelenggarakan Pendidikan Kejuruan dalam Bidang Telekomunikasi.Saat ini SMK Telkom Sandhy Putra Banjarbaru mempunyai 2 Program Teknik Jaringan Akses (TJA) dan Program Keahlian Informatika yaitu Teknik Komputer & Jaringan (TKJ), Program Multimedia (MM) dan Program Rekayasa Perangkat Lunak (RPL).
                             SMK Telkom Sandhy Putra Banjarbaru menghasilkan tenaga teknis yang profesional di bidang Teknologi Informasi dan telekomunikasi, unggul di dunia kerja, mempunyai etos kerja tinggi, berbudi pekerti luhur dan berakhlak mulia serta mampu berkompetisi dalam era global. <br><br> Kemudian di tahun 2015 Yayasan Pendidikan Telkom (YPT) dan Yayasan Sandhykara Putra Telkom (YSPT) digabung menjadi satu yayasan menjadi Telkom Foundation dengan Ketua Umum yaitu Bapak Jhoni Girsang, M.Sc. Dengan bentuk yayasan yang baru tersebut maka SMK Telkom Sandhy Putra Banjarbaru juga berganti nama menjadi Telkom School Banjarbaru atau SMK Telkom Banjarbaru.

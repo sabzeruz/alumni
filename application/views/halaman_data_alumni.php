@@ -84,17 +84,18 @@
 
                     <div class="col-3">
                         <a href="<?= base_url('assets/upload/photo/' . $jur->foto) ?>">
-                            <div class="card <?= 'bg-' . $warna ?> mt-4 p-3" style="width: 18rem;">
+                            <div class="card <?= 'bg-' . $warna ?> mt-4 p-3" >
                                 <div class="p-3">
                                     <img src="<?= base_url("assets/upload/photo/$jur->foto") ?>" class="card-img-top" height="310px" alt="...">
                                 </div>
                         </a>
                         <div class="card-body">
-                            <h5 class="card-title text-white text-center fs-4"><?= $jur->nis ?></h5>
+                            <h5 class="card-title text-white text-center fs-4"><?= $jur->nama_siswa ?></h5>
                             <div class="card-text text-center text-white fs-5">
-                                <span><?= $jur->nama_siswa ?></span><br>
+                                <br>
                                 <span><?= $jur->jurusan ?></span><br>
-                                <span><?= $jur->tanggal_lahir ?></span>
+                                <br>
+                                <span>Lulusan Tahun : <br><?= $jur->tanggal_lahir ?></span>
                             </div>
                         </div>
                     </div>
@@ -103,3 +104,5 @@
         <?php endforeach; ?>
     </div>
 </div>
+<br>
+<br>

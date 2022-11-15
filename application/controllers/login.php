@@ -6,9 +6,8 @@ class login extends CI_Controller
         parent::__construct();
         $this->load->model('login_model');
         if ($this->session->userdata('login') == "1") {
-            
             redirect('pengaturan/beranda');
-        }
+        } 
     }
 
     public function index()

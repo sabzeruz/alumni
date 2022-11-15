@@ -7,12 +7,13 @@
     <title>Dashboard - Adminku</title>
 
     <link rel="stylesheet" href="<?= base_url('assets/css/main/app.css') ?>">
+    <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/main/main.css') ?>">
     <link rel="stylesheet" href="<?= base_url('assets/css/main/app-dark.css') ?>">
     <link rel="shortcut icon" href="<?= base_url('assets/images/logo/favicon.svg"') ?>" type="image/x-icon">
     <link rel="shortcut icon" href="<?= base_url('assets/images/logo/favicon.png"') ?>" type="image/png">
     <script src="https://kit.fontawesome.com/56e0df19b0.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="<?= base_url('assets/css/shared/iconly.css') ?>">
-    <link rel="stylesheet" href="<?= base_url('assets/extensions/toastify-js/src/toastify.css')?>">
+    <link rel="stylesheet"  href="<?= base_url('assets/extensions/toastify-js/src/toastify.css')?>">
     
 </head>
 
@@ -51,6 +52,11 @@
 
 .carousel-control-next-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
+}
+
+.card-horizontal  {
+    flex-direction: row !important;
+    align-items: center;
 }
     </style>
 
