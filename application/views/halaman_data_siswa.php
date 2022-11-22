@@ -237,7 +237,7 @@
                                     <td class="py-4 px-4 text-center"> <?= $tampil->jurusan ?></td>
                                     <td class="py-4 px-4 text-center">
                                         <?php if (($tampil->foto == '') or ($tampil->foto == '-')) { ?>
-                                            <img src="<?= base_url('assets/images/default.jpg') ?>" class="card-img-top" style="height:221px;">
+                                            <img src="<?= base_url('assets/upload/photo/avatar.jpg') ?>" class="card-img-top" style="height:221px;">
                                         <?php } else { ?>
                                             <img src="<?= base_url('assets/upload/photo/' . $tampil->foto) ?>" class="card-img-top" style="height:221px;">
                                         <?php } ?>
@@ -308,13 +308,13 @@
                                 <?php
                                 if (($tampil->foto == '') or ($tampil->foto == '-')) {
                                 ?>
-                                <button data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                    <img src="<?= base_url('assets/images/default.jpg') ?>" class="card-img-top" data-bs-toggle="modal" data-bs-target="#exampleModal" style="height:221px;">
+                                <button data-bs-toggle="modal" data-bs-target="#view<?= $tampil->id ?>">
+                                    <img src="<?= base_url('assets/upload/photo/avatar.jpg') ?>" class="card-img-top" data-bs-toggle="modal" data-bs-target="#exampleModal" style="height:221px;">
                                 </button>
                                 <?php
                                 } else { ?>
-                                    <button data-toggle="modal" data-bs-target="#exampleModal" href="<?= base_url('assets/upload/photo/' . $tampil->foto) ?>">
-                                        <img class="rounded d-blockimg-thumbnail" width="125px" height="150px" data-bs-toggle="modal" data-bs-target="#exampleModal" src="<?= base_url('assets/upload/photo/' . $tampil->foto) ?>">
+                                    <button data-toggle="modal" data-bs-target="#view<?= $tampil->id ?>" href="<?= base_url('assets/upload/photo/' . $tampil->foto) ?>">
+                                        <img class="rounded d-blockimg-thumbnail" width="125px" height="125px" data-bs-toggle="modal" data-bs-target="#exampleModal" src="<?= base_url('assets/upload/photo/' . $tampil->foto) ?>">
                                     <?php } ?>
                             </td>
                             <td class="py-4 px-4 text-center"> <?= $tampil->tahun_lulus ?></td>
@@ -459,7 +459,7 @@
     foreach ($siswa as $view_foto) : // :(titik dua) = begin = endforeach;
     ?>
 
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="view<?= $edit_data->id ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">

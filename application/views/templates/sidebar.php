@@ -8,12 +8,16 @@
 
     <link rel="stylesheet" href="<?= base_url('assets/css/main/app.css') ?>">
     <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/main/main.css') ?>">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet" href="<?= base_url('assets/css/main/app-dark.css') ?>">
     <link rel="shortcut icon" href="<?= base_url('assets/images/logo/favicon.svg"') ?>" type="image/x-icon">
     <link rel="shortcut icon" href="<?= base_url('assets/images/logo/favicon.png"') ?>" type="image/png">
     <script src="https://kit.fontawesome.com/56e0df19b0.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="<?= base_url('assets/css/shared/iconly.css') ?>">
     <link rel="stylesheet"  href="<?= base_url('assets/extensions/toastify-js/src/toastify.css')?>">
+
+    <link rel="stylesheet" href="<?= base_url('assets/css/style.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/css/simple-datatables.css') ?>">
     
 </head>
 
@@ -183,7 +187,12 @@
                                     <a href="<?= base_url('pengaturan/data_program_siswa') ?>" class='submenu-link'> 
                                         <i class="bi bi-person-fill"> </i>
                                         <span>Data Siswa</span></a>
-                                </li>
+                                    </li>
+                                <li class="submenu-item ">
+                                    <a href="<?= base_url('pengaturan/data_program_user') ?>" class='submenu-link'> 
+                                        <i class="bi bi-person-fill"> </i>
+                                        <span>Data User</span></a>
+                                    </li>
                             </ul>
                         </li>
 

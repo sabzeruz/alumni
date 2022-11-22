@@ -90,6 +90,13 @@ class pengaturan extends CI_Controller
         $this->load->view('halaman_data_siswa', $isi);
         $this->load->view('templates/footer');
     }
+    public function data_program_user()
+    {
+        $this->load->view('templates/sidebar');
+        $isi['user'] = $this->pengaturan_model->ambil_user(); //select * from supplier
+        $this->load->view('halaman_data_user', $isi);
+        $this->load->view('templates/footer');
+    }
 
     public function tambah_data_program_Studi()
     {

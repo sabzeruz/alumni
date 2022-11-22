@@ -15,6 +15,11 @@
             return $this->db->get('siswa')->result();
         }
 
+        public function ambil_user()
+        {
+            return $this->db->get('user')->result();
+        }
+
 
         public function simpan($data) {
             $this->db->insert('siswa', $data); //insert into barang value isi data

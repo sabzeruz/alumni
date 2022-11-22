@@ -83,21 +83,35 @@
 
 
                     <div class="col-3">
-                        <a href="<?= base_url('assets/upload/photo/' . $jur->foto) ?>">
-                            <div class="card <?= 'bg-' . $warna ?> mt-4 p-3" >
-                                <div class="p-3">
-                                    <img src="<?= base_url("assets/upload/photo/$jur->foto") ?>" class="card-img-top" height="310px" alt="...">
+                        <?php
+                        if (($jur->foto == '') or ($jur->foto == '-')) {
+                        ?>
+                            <a href="<?= base_url('assets/upload/photo/avatar.jpg') ?>">
+                            <?php
+                        } else { ?>
+                                <a href="<?= base_url('assets/upload/photo/' . $jur->foto) ?>">
+                                <?php } ?>
+                                <div class="card <?= 'bg-' . $warna ?> m-3 p-3">
+                                    <div class="p-3">
+                                        <?php
+                                        if (($jur->foto == '') or ($jur->foto == '-')) {
+                                        ?>
+                                            <img src="<?= base_url("assets/upload/photo/avatar.jpg") ?>" class="card-img-top" alt="...">
+                                        <?php
+                                        } else { ?>
+                                            <img src="<?= base_url('assets/upload/photo/' . $jur->foto) ?>" class="card-img-top" height="310px" alt="...">
+                                        <?php } ?>
+                                    </div>
+                                </a>
+                                <div class="card-body">
+                                    <h5 class="card-title text-white text-center fs-4 p-4"><?= $jur->nama_siswa ?></h5>
+                                    <div class="card-text text-center text-white fs-5">
+                                        <br>
+                                        <span><?= $jur->jurusan ?></span><br>
+                                        <br>
+                                        <span>Lulusan Tahun : <br><?= $jur->tahun_lulus ?></span>
+                                    </div>
                                 </div>
-                        </a>
-                        <div class="card-body">
-                            <h5 class="card-title text-white text-center fs-4"><?= $jur->nama_siswa ?></h5>
-                            <div class="card-text text-center text-white fs-5">
-                                <br>
-                                <span><?= $jur->jurusan ?></span><br>
-                                <br>
-                                <span>Lulusan Tahun : <br><?= $jur->tanggal_lahir ?></span>
-                            </div>
-                        </div>
                     </div>
 
             </div>

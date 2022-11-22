@@ -1,10 +1,25 @@
 <!-- MAIN -->
+
+
 <div id="main">
     <header class="mb-3">
         <a href="#" class="burger-btn d-block d-xl-none">
             <i class="bi bi-justify fs-3"></i>
         </a>
     </header>
+
+    <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+  <div class="toast-header">
+    <img src="..." class="rounded me-2" alt="...">
+    <strong class="me-auto">Bootstrap</strong>
+    <small>11 mins ago</small>
+    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+  </div>
+  <div class="toast-body">
+    Hello, world! This is a toast message.
+  </div>
+</div>
+
 
     <div class="container justify-content-between d-flex justify-content-between align-items-center mb-3">
         <div class="page-heading mt-4 align-items-center">
@@ -273,3 +288,5 @@ Biar kalian tidak penasaran apa saja yang ada di dalam SMK Telkom Banjarbaru, se
             </div>
         </div>
     </div>
+
+   
