@@ -122,25 +122,7 @@ class pengaturan extends CI_Controller
     }
 
 
-    public function simpan_jurusan()
-    {
-        $kode_jurusan    = $this->input->post('kode_jurusan');
-        $cek_data = $this->pengaturan_model->cek_data_jurusan($kode_jurusan);
-        if (!empty($cek_data)) {
-            $this->session->set_flashdata('duplicate', '"Duplication Data Entry "');
-            redirect('pengaturan/profil_jurusan');
-        }
-        $nama_jurusan   = $this->input->post('nama_jurusan');
-        $ketua_jurusan   = $this->input->post('ketua_jurusan');
-        $data = array(
-            'kode_jurusan'   => $kode_jurusan,
-            'nama_jurusan'  => $nama_jurusan,
-            'ketua_jurusan'  => $ketua_jurusan,
-        );
-        $this->pengaturan_model->simpan_jurusan($data);
-        $this->session->set_flashdata('success', '"Data Has been Saved"');
-        redirect('pengaturan/data_program_studi ');
-    }
+   
 
     public function simpan()
     {
@@ -199,6 +181,52 @@ class pengaturan extends CI_Controller
         redirect('pengaturan/data_program_siswa');
     }
 
+     public function simpan_jurusan()
+    {
+        $kode_jurusan    = $this->input->post('kode_jurusan');
+        $cek_data = $this->pengaturan_model->cek_data_jurusan($kode_jurusan);
+        if (!empty($cek_data)) {
+            $this->session->set_flashdata('duplicate', '"Duplication Data Entry "');
+            redirect('pengaturan/profil_jurusan');
+        }
+        $nama_jurusan   = $this->input->post('nama_jurusan');
+        $ketua_jurusan   = $this->input->post('ketua_jurusan');
+        $data = array(
+            'kode_jurusan'   => $kode_jurusan,
+            'nama_jurusan'  => $nama_jurusan,
+            'ketua_jurusan'  => $ketua_jurusan,
+        );
+        $this->pengaturan_model->simpan_jurusan($data);
+        $this->session->set_flashdata('success', '"Data Has been Saved"');
+        redirect('pengaturan/data_program_studi ');
+    }
+
+    public function simpan_user()
+    {
+        $id_user    = $this->input->post('id_user');
+        $cek_data = $this->pengaturan_model->cek_data_jurusan($id_user);
+        if (!empty($cek_data)) {
+            $this->session->set_flashdata('duplicate', '"Duplication Data Entry "');
+            redirect('pengaturan/profil_jurusan');
+        }
+        $nama  = $this->input->post('nama');
+        $username  = $this->input->post('username');
+        $password  = $this->input->post('password');
+        $level  = $this->input->post('level');
+        $status  = $this->input->post('status');
+        $data = array(
+            'id_user'   => $id_user,
+            'nama'  => $nama,
+            'username'  => $username,
+            'password'  => $password,
+            'level'  => $level,
+            'status'  => $status,
+        );
+        $this->pengaturan_model->simpan_user($data);
+        $this->session->set_flashdata('success', '"Data Has been Saved"');
+        redirect('pengaturan/data_program_user ');
+    }
+
     public function update_data()
     {
         $nis = $this->input->post('nis');
@@ -254,8 +282,33 @@ class pengaturan extends CI_Controller
             'ketua_jurusan' => $ketua_jurusan,
         );
 
+        
+
         $this->pengaturan_model->update_data($kode_jurusan, $data);
         redirect('pengaturan/data_program_studi');
+    }
+
+    public function update_data_user()
+    {
+        $id_user  = $this->input->post('id_user');
+        $nama = $this->input->post('nama');
+        $username = $this->input->post('username');
+        $password = $this->input->post('password');
+        $level = $this->input->post('level');
+        $status = $this->input->post('status');
+        $data = array(
+            'id_user'  => $id_user,
+            'nama' => $nama,
+            'username' => $username,
+            'password' => $password,
+            'level' => $level,
+            'status' => $status,
+        );
+
+        
+
+        $this->pengaturan_model->update_data_user($id_user, $data);
+        redirect('pengaturan/data_program_user');
     }
 
     public function hapus($kode_jurusan = null)
@@ -281,6 +334,14 @@ class pengaturan extends CI_Controller
         $this->pengaturan_model->hapus($id);
         $this->session->set_flashdata('Hapus', 'Data berhasil dihapus');
         redirect(base_url('pengaturan/data_program_siswa'));
+    }
+   
+     public function delete_data_user()
+    {
+        $id_user  = $this->input->post('id_user');
+        $this->pengaturan_model->hapus($id_user);
+        $this->session->set_flashdata('Hapus', 'Data berhasil dihapus');
+        redirect(base_url('pengaturan/data_program_user'));
     }
 
     public function buka_tja($tahun = null)

@@ -229,8 +229,8 @@ foreach ($jurusan as $hapus) :
 
                         </p>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-dismiss="modal">Kembali</button>
-                            <button type="submit" class="btn btn-success">Hapus</button>
+                            <<button type="button" class="btn btn-success" data-bs-dismiss="modal">Kembali</button>
+                                <button type="submit" class="btn btn-danger">Hapus</button>
                         </div>
                     </form>
                 </div>

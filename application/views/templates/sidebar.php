@@ -16,8 +16,8 @@
     <link rel="stylesheet" href="<?= base_url('assets/css/shared/iconly.css') ?>">
     <link rel="stylesheet"  href="<?= base_url('assets/extensions/toastify-js/src/toastify.css')?>">
 
-    <link rel="stylesheet" href="<?= base_url('assets/css/style.css') ?>">
-    <link rel="stylesheet" href="<?= base_url('assets/css/simple-datatables.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/extensions/simple-datatables/style.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/css/pages/simple-datatables.css') ?>">
     
 </head>
 
