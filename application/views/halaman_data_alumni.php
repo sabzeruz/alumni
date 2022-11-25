@@ -82,14 +82,14 @@
 
 
 
-                    <div class="col-3">
+                    <div class=" card-deck col-3" style="">
                         <?php
                         if (($jur->foto == '') or ($jur->foto == '-')) {
                         ?>
-                            <a href="<?= base_url('assets/upload/photo/avatar.jpg') ?>">
+                            <a href="<?= base_url('assets/upload/photo/avatar.jpg') ?>" class="card-img-top">
                             <?php
                         } else { ?>
-                                <a href="<?= base_url('assets/upload/photo/' . $jur->foto) ?>">
+                                <a href="<?= base_url('assets/upload/photo/' . $jur->foto) ?>" class="card-img-top">
                                 <?php } ?>
                                 <div class="card <?= 'bg-' . $warna ?> m-3 p-3">
                                     <div class="p-3">
@@ -99,17 +99,17 @@
                                             <img src="<?= base_url("assets/upload/photo/avatar.jpg") ?>" class="card-img-top" alt="...">
                                         <?php
                                         } else { ?>
-                                            <img src="<?= base_url('assets/upload/photo/' . $jur->foto) ?>" class="card-img-top" height="310px" alt="...">
+                                            <img src="<?= base_url('assets/upload/photo/' . $jur->foto) ?>" class="card-img-top"     alt="...">
                                         <?php } ?>
                                     </div>
                                 </a>
                                 <div class="card-body">
-                                    <h5 class="card-title text-white text-center fs-4 p-4"><?= $jur->nama_siswa ?></h5>
-                                    <div class="card-text text-center text-white fs-5">
+                                    <h6 class="card-title text-white text-center"><?= $jur->nama_siswa ?></h6>
+                                    <div class="card-text text-center text-white ">
                                         <br>
-                                        <span><?= $jur->jurusan ?></span><br>
+                                        <p><?= $jur->jurusan ?></p><br>
                                         <br>
-                                        <span>Lulusan Tahun : <br><?= $jur->tahun_lulus ?></span>
+                                        <p>Lulusan Tahun : <br><?= $jur->tahun_lulus ?></p>
                                     </div>
                                 </div>
                     </div>

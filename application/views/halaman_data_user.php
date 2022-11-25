@@ -89,7 +89,7 @@
                     Simple Datatable
                 </div>
                 <div class="card-body">
-                    <table class="table table-striped" id="table1">
+                    <table class="table table-striped" id="table2">
                         <thead>
                             <tr>
 
@@ -313,5 +313,11 @@
     <?php
     endforeach
     ?>
+
+    <script>
+        $(document).ready(function() {
+            $('#table2').DataTable();
+        });
+    </script>
 
     <!-- modal delete product -->

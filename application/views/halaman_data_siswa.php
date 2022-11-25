@@ -307,14 +307,15 @@
                             <td class="py-4 px-4 text-center">
                                 <?php
                                 if (($tampil->foto == '') or ($tampil->foto == '-')) {
-                                ?>
-                                <button data-bs-toggle="modal" data-bs-target="#view<?= $tampil->id ?>">
-                                    <img src="<?= base_url('assets/upload/photo/avatar.jpg') ?>" class="card-img-top" data-bs-toggle="modal" data-bs-target="#exampleModal" style="height:221px;">
-                                </button>
+                                ?>  
+                                <a data-bs-toggle="modal" data-bs-target="#view<?= $tampil->id ?>">
+                                    <img src="<?= base_url('assets/upload/photo/avatar.jpg') ?>" class="card-img-top" data-bs-toggle="modal" data-bs-target="#exampleModal" >
+                                </a>
                                 <?php
                                 } else { ?>
-                                    <button data-toggle="modal" data-bs-target="#view<?= $tampil->id ?>" href="<?= base_url('assets/upload/photo/' . $tampil->foto) ?>">
+                                    <a data-toggle="modal" data-bs-target="#view<?= $tampil->id ?>" href="<?= base_url('assets/upload/photo/' . $tampil->foto) ?>">
                                         <img class="rounded d-blockimg-thumbnail" width="125px" height="125px" data-bs-toggle="modal" data-bs-target="#exampleModal" src="<?= base_url('assets/upload/photo/' . $tampil->foto) ?>">
+                                    </a>
                                     <?php } ?>
                             </td>
                             <td class="py-4 px-4 text-center"> <?= $tampil->tahun_lulus ?></td>

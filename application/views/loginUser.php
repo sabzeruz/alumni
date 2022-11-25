@@ -28,12 +28,21 @@
 				<div class="col-md-6 col-lg-4">
 					<div class="login-wrap p-0">
 		      	<h3 class="mb-4 text-center font-weight-bold">LOGIN</h3>
-				  <?php if ($this->session->flashdata('pesan')) { ?>
-    <div class="alert alert-danger">
-        <a href="#" class="close" data-dismiss="alert" role="alert">&times;</a>
-		<i class="fa fa-circle fa-1" aria-hidden="true"></i> <?php echo $this->session->flashdata('pesan'); ?>
-    </div>
-<?php } ?>	
+
+				  <?php if ($this->session->flashdata('success')) { ?>
+            <div class="alert alert-success">
+                <a href="#" class="close" data-bs-dismiss="alert">&times;</a>
+                <strong><i class="fa fa-circle" aria-hidden="true"></i></strong> <?= $this->session->flashdata('success'); ?>
+            </div>
+			<?php } ?>
+
+			<?php if ($this->session->flashdata('pesan')) { ?>
+            <div class="alert alert-danger">
+                <a href="#" class="close" data-bs-dismiss="alert">&times;</a>
+                <strong><i class="fa fa-circle" aria-hidden="true"></i></strong> <?= $this->session->flashdata('pesan'); ?>
+            </div>
+
+        <?php } ?>
               <form method="POST" action="<?= base_url('login') ?>" class="needs-validation">
 		      	<form action="#" class="signin-form">
 		      		<div class="form-group">
@@ -51,7 +60,7 @@
 						<div class="w-50">
 									</div>
 									<div class="w-50 text-md-right">
-										<a href="#" style="color: #fff">Register</a>
+										<a href="" data-toggle="modal" data-target="#signup" style="color: #fff">Register</a>
 									</div>
 					</div>
 	          </form>
@@ -65,6 +74,55 @@
 			</div>
 		</div>
 	</section>
+
+	<!-- Modal Sign Up -->
+<div class="modal fade" id="signup" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <form method="POST" action="<?= base_url('register/signup') ?>" enctype="multipart/form-data">
+            <div class="modal-content bg-dark">
+                <div class="modal-header">
+                    <h5 class="modal-title text-white" id="exampleModalLabel">Sign Up</h5>
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="col">
+                        <div class="px-3">
+                            <div class="form-group">
+                                <label for="">Nama Lengkap</label>
+                                <input type="text" class="form-control rounded-0 text-black-50" name="nama" placeholder="John Doe" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="">Username</label>
+                                <input type="text" class="form-control rounded-0" name="username" placeholder="Username" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="">Password</label>
+                                <input type="text" class="form-control rounded-0" name="password" placeholder="Password">
+                            </div>
+							<div class="form-group">
+                            <label>Level</label>
+                            <select class="form-control rounded-0 bg-dark" name="level">
+                                <option value=""> -- Pilih Level User -- </option>
+                                <option value="admin"> Admin </option>
+                                <option value="alumni"> Siswa </option>
+								<option value="perusahaan"> Perusahaan </option>
+								<option value="guru"> Guru </option>
+                            </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-success btn-sm">Simpan</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
 
 	<script src="<?= base_url('/assets/login/js/jquery.min.js')?>"></script>
   <script src="<?= base_url('/assets/login/js/popper.js')?>"></script>

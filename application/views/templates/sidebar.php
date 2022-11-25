@@ -16,9 +16,9 @@
     <link rel="stylesheet" href="<?= base_url('assets/css/shared/iconly.css') ?>">
     <link rel="stylesheet"  href="<?= base_url('assets/extensions/toastify-js/src/toastify.css')?>">
 
-    <link rel="stylesheet" href="<?= base_url('assets/extensions/simple-datatables/style.css') ?>">
-    <link rel="stylesheet" href="<?= base_url('assets/css/pages/simple-datatables.css') ?>">
-    
+    <link rel="stylesheet" href="<?= base_url('assets/css/pages/fontawesome.css') ?>">
+<link rel="stylesheet" href="<?= base_url('assets/extensions/datatables.net-bs5/css/dataTables.bootstrap5.min.css') ?>">
+<link rel="stylesheet" href="<?= base_url('assets/css/pages/datatables.css') ?>">
 </head>
 
 <style>

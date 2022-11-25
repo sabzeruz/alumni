@@ -8,8 +8,7 @@ class login_model extends CI_Model
         $email = $this->input->post('username', true);
         $pw = $this->input->post('password', true);
 
-        $this->db->where('username', $email); 
-        $this->db->where('password', $pw);      
+        $this->db->where('username', $email);
         $user = $this->db->get('user')->row_array();
 
         if ($user) {
@@ -23,9 +22,12 @@ class login_model extends CI_Model
                 ];
                 $this->session->set_userdata($data);
                 redirect('pengaturan/beranda');
-            } 
+            } else {
+                $this->session->set_flashdata('pesan', 'Password Salah...');
+                redirect('login');
+            }
         } else {
-            $this->session->set_flashdata('pesan', 'Data anda tidak ditemukan di database!');
+            $this->session->set_flashdata('pesan', 'Username tidak terdaftar...');
             redirect('login');
         }
     }
