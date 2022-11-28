@@ -339,7 +339,7 @@ class Pengaturan extends CI_Controller
      public function delete_data_user()
     {
         $id_user  = $this->input->post('id_user');
-        $this->pengaturan_model->hapus($id_user);
+        $this->pengaturan_model->hapus_data_user($id_user);
         $this->session->set_flashdata('Hapus', 'Data berhasil dihapus');
         redirect(base_url('pengaturan/data_program_user'));
     }

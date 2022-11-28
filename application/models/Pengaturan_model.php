@@ -64,7 +64,7 @@
         $this->db->where('id', $id)->delete('siswa');
     }
 
-    public function hapus_user($id_user)
+    public function hapus_data_user($id_user)
     {
         $this->db->where('id_user', $id_user)->delete('user');
     }

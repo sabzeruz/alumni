@@ -329,10 +329,10 @@
                             </td>
 
                         </tr>
+                        </tbody>
                     <?php
                 endforeach;
                     ?>
-                    </tbody>
             </table>
         </div>
 
