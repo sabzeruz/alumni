@@ -82,7 +82,8 @@
 
 
 
-                    <div class=" card-deck col-3" style="">
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-3 mb-4" h-100" style="">
+                        
                         <?php
                         if (($jur->foto == '') or ($jur->foto == '-')) {
                         ?>

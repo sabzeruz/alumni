@@ -8,17 +8,6 @@
         </a>
     </header>
 
-    <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-  <div class="toast-header">
-    <img src="..." class="rounded me-2" alt="...">
-    <strong class="me-auto">Bootstrap</strong>
-    <small>11 mins ago</small>
-    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-  </div>
-  <div class="toast-body">
-    Hello, world! This is a toast message.
-  </div>
-</div>
 
 
     <div class="container justify-content-between d-flex justify-content-between align-items-center mb-3">
@@ -45,7 +34,7 @@
 
     <div class="row">
 
-        <div class="col-6 col-lg-3 col-md-6">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-3 mb-4">
             <div class="card">
                 <div class="card-body px-4 py-4">
                     <div class="row">
@@ -66,7 +55,7 @@
             </div>
         </div>
 
-        <div class="col-6 col-lg-3 col-md-6">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-3 mb-4">
             <div class="card">
                 <div class="card-body px-4 py-4">
                     <div class="row">
@@ -87,7 +76,7 @@
         </div>
 
 
-        <div class="col-6 col-lg-3 col-md-6">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-3 mb-4">
             <div class="card">
                 <div class="card-body px-4 py-4-4">
                     <div class="row">
@@ -109,7 +98,7 @@
             </div>
         </div>
 
-        <div class="col-6 col-lg-3 col-md-6">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-3 mb-4">
             <div class="card">
                 <div class="card-body px-4 py-4">
                     <div class="row">

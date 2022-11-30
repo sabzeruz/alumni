@@ -53,7 +53,7 @@
     </div>
 
     <?php
-        if ($this->session->userdata('level') == 'admin') { ?>
+    if ($this->session->userdata('level') == 'admin') { ?>
 
     <?php } ?>
     <?php if ($this->session->flashdata('success')) { ?>
@@ -96,61 +96,63 @@
                 Data User
             </div>
             <div class="card-body">
-                <table class="table table-striped display responsive nowrap" id="table1" style="width:100%">
-                    <thead>
-                        <tr>
+                <div class="table-responsive">
+                    <table class="table table-striped display responsive nowrap" id="table1" style="width:100%">
+                        <thead>
+                            <tr>
 
-                            <th class="py-4 px-4 text-center text-center">Nama</th>
-                            <th class="py-4 px-4 text-center text-center">Username</th>
-                            <th class="py-4 px-4 text-center text-center">Password</th>
-                            <th class="py-4 px-4 text-center text-center">Level</th>
-                            <th class="py-4 px-4 text-center text-center">Status</th>
-                            <th class="py-4 px-4 text-center text-center">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php
-                            $no = 1;
-                            foreach ($user as $tampil): // :(titik dua) = begin = endforeach;
-                            ?>
-                        <tr>
-                            <td class="py-4 px-4 text-center text-center">
-                                <?= $tampil->nama ?>
-                            </td>
-                            <td class="py-4 px-4 text-center text-center">
-                                <?= $tampil->username ?>
-                            </td>
-                            <td class="py-4 px-4 text-center text-center">
-                                <?= $tampil->password ?>
-                            </td>
-                            <td class="py-4 px-4 text-center text-center">
-                                <?= $tampil->level ?>
-                            </td>
-                            <td class="py-4 px-4 text-center text-center">
-                                <?php if (($tampil->status == '0')) { ?>
+                                <th class="py-4 px-4 text-center text-center">Nama</th>
+                                <th class="py-4 px-4 text-center text-center">Username</th>
+                                <th class="py-4 px-4 text-center text-center">Password</th>
+                                <th class="py-4 px-4 text-center text-center">Level</th>
+                                <th class="py-4 px-4 text-center text-center">Status</th>
+                                <th class="py-4 px-4 text-center text-center">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                        $no = 1;
+                        foreach ($user as $tampil): // :(titik dua) = begin = endforeach;
+                        ?>
+                            <tr>
+                                <td class="py-4 px-4 text-center text-center">
+                                    <?= $tampil->nama ?>
+                                </td>
+                                <td class="py-4 px-4 text-center text-center">
+                                    <?= $tampil->username ?>
+                                </td>
+                                <td class="py-4 px-4 text-center text-center">
+                                    <?= $tampil->password ?>
+                                </td>
+                                <td class="py-4 px-4 text-center text-center">
+                                    <?= $tampil->level ?>
+                                </td>
+                                <td class="py-4 px-4 text-center text-center">
+                                    <?php if (($tampil->status == '0')) { ?>
 
-                                <span class="badge bg-danger">Tidak Aktif</span>
+                                    <span class="badge bg-danger">Tidak Aktif</span>
 
-                                <?php } else { ?>
+                                    <?php } else { ?>
 
-                                <span class="badge bg-success">Aktif</span>
+                                    <span class="badge bg-success">Aktif</span>
 
-                                <?php } ?>
+                                    <?php } ?>
 
-                            </td>
-                            <td class="py-4 px-4 text-center text-center">
-                                <button class="btn text-center" data-bs-toggle="modal"
-                                    data-bs-target="#edit<?= $tampil->id_user ?>"><a>EDIT</a></button>
-                                <button class="btn text-center" data-bs-toggle="modal"
-                                    data-bs-target="#hapus_data<?= $tampil->id_user ?>"><a>HAPUS</a></button>
-                            </td>
+                                </td>
+                                <td class="py-4 px-4 text-center text-center">
+                                    <button class="btn text-center" data-bs-toggle="modal"
+                                        data-bs-target="#edit<?= $tampil->id_user ?>"><a>EDIT</a></button>
+                                    <button class="btn text-center" data-bs-toggle="modal"
+                                        data-bs-target="#hapus_data<?= $tampil->id_user ?>"><a>HAPUS</a></button>
+                                </td>
 
-                        </tr>
-                        <?php
-                            endforeach;
-                            ?>
-                    </tbody>
-                </table>
+                            </tr>
+                            <?php
+                        endforeach;
+                        ?>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
 
@@ -224,8 +226,8 @@
 <!-- modal edit -->
 
 <?php
-    foreach ($user as $edit_data): // :(titik dua) = begin = endforeach;
-    ?>
+foreach ($user as $edit_data): // :(titik dua) = begin = endforeach;
+?>
 
 <div class="modal fade" id="edit<?= $edit_data->id_user ?>" tabindex="-1" role="dialog"
     aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -269,13 +271,13 @@
                         <label>Level</label>
                         <select class="form-control rounded-0" name="level" required>
                             <option value=""> --Pilih-- </option>
-                            <option value="admin" <?= $edit_data->level == 'admin' ? 'selected' : '' ?>> Administrator
+                            <option value="admin" <?= $edit_data->level=='admin' ? 'selected' : '' ?>> Administrator
                             </option>
-                            <option value="alumni" <?= $edit_data->level == 'alumni' ? 'selected' : '' ?>> Alumni
+                            <option value="alumni" <?= $edit_data->level=='alumni' ? 'selected' : '' ?>> Alumni
                             </option>
-                            <option value="guru" <?= $edit_data->level == 'guru' ? 'selected' : '' ?>> Guru/Staff
+                            <option value="guru" <?= $edit_data->level=='guru' ? 'selected' : '' ?>> Guru/Staff
                             </option>
-                            <option value="perusahaan" <?= $edit_data->level == 'perusahaan' ? 'selected' : '' ?>>
+                            <option value="perusahaan" <?= $edit_data->level=='perusahaan' ? 'selected' : '' ?>>
                                 Perusahaan </option>
                         </select>
                     </div>
@@ -283,8 +285,8 @@
                         <label>Status</label>
                         <select class="form-control rounded-0" name="status" required>
                             <option value=""> --Pilih-- </option>
-                            <option value="0" <?= $edit_data->status == '0' ? 'selected' : '' ?>> Tidak Aktif</option>
-                            <option value="1" <?= $edit_data->status == '1' ? 'selected' : '' ?>> Aktif </option>
+                            <option value="0" <?= $edit_data->status=='0' ? 'selected' : '' ?>> Tidak Aktif</option>
+                            <option value="1" <?= $edit_data->status=='1' ? 'selected' : '' ?>> Aktif </option>
                         </select>
 
                     </div>
@@ -299,40 +301,41 @@
     </div>
 </div>
 <?php
-    endforeach;
-    ?>
+endforeach;
+?>
 <!-- modal edit product -->
 
 
 
 <!-- modal delete product -->
 <?php
-    foreach ($user as $hapus_data):
-    ?>
-    <div class="modal fade" id="hapus_data<?= $hapus_data->id_user ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Hapus siswa</h5>
-                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form method="post" action="<?= base_url('pengaturan/delete_data_user') ?>"
-                        enctyp="multipart/form-data">
-                        <p>
-                            <label class="form-label">Apakah anda yakin ingin menghapus data?</label>
-                            <input type="hidden" name="id_user" value="<?= $hapus_data->id_user ?>">
-
-                        </p>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-success" data-bs-dismiss="modal">Kembali</button>
-                            <button type="submit" class="btn btn-danger">Hapus</button>
-                        </div>
-                    </form>
-                </div>
+foreach ($user as $hapus_data):
+?>
+<div class="modal fade" id="hapus_data<?= $hapus_data->id_user ?>" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Hapus siswa</h5>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
+            <div class="modal-body">
+                <form method="post" action="<?= base_url('pengaturan/delete_data_user') ?>"
+                    enctyp="multipart/form-data">
+                    <p>
+                        <label class="form-label">Apakah anda yakin ingin menghapus data?</label>
+                        <input type="hidden" name="id_user" value="<?= $hapus_data->id_user ?>">
+
+                    </p>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-success" data-bs-dismiss="modal">Kembali</button>
+                        <button type="submit" class="btn btn-danger">Hapus</button>
+                    </div>
+                </form>
+            </div>
+        </div>
         <?php
-        endforeach
+endforeach
         ?>

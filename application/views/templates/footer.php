@@ -13,18 +13,6 @@
 </footer>
 
 
-<!-- <script>
-        window.onload = (event) => {
-  let myAlert = document.querySelectorAll('.toast')[0];
-    let bsAlert = new bootstrap.Toast(myAlert);
-    bsAlert.show();
-};
-    </script> -->
-    <script type="text/javascript">
-     
-
-    </script>
-
 <script src="<?= base_url('assets/js/bootstrap.js') ?>"></script>
 <script src="<?= base_url('assets/js/app.js') ?>"></script>
 
