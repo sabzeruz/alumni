@@ -76,7 +76,7 @@
 
     <div id="content" class="mb-4">
         <?php
-        if ($this->session->userdata('level') == 'admin' || 'perusahaan') { ?>
+        if ($this->session->userdata('level') == 'admin') { ?>
             <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addModal">
                 <i class="fas fa-plus"></i> Tambah Data
             </button>
@@ -84,7 +84,8 @@
             <a type="button" class="btn btn-primary" href="javascript:printDiv('id-elemen-yang-ingin-di-print');">
                 <i class="fa-solid fa-print"></i>
                 Cetak</a>
-        <?php } ?>
+        <?php } ?>  
+        <
 
         <!-- Modal Add Product-->
         <form method="post" action="<?= base_url('pengaturan/simpan') ?>" enctype="multipart/form-data">

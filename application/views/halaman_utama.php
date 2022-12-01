@@ -275,7 +275,7 @@ Biar kalian tidak penasaran apa saja yang ada di dalam SMK Telkom Banjarbaru, se
                     <span class="visually-hidden">Next</span>
                 </a>
             </div>
-        </div>
-    </div>
+       
+   
 
    
