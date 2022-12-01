@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - Adminku</title>
+    <title>Alumni | SMK TELKOM</title>
 
     <link rel="stylesheet" href="<?= base_url('assets/css/main/app.css') ?>">
 
@@ -75,7 +75,7 @@
                 <div class="sidebar-header position-relative">
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="logo">
-                            <a href="index.html"><img src="<?= base_url('assets/images/logo/logo2.svg') ?>" alt="Logo" srcset=""></a>
+                            <a href="index.html"><img src="https://smktelkom-pwt.sch.id/wp-content/uploads/2019/02/logo-telkom-schools.png" alt="Logo" srcset=""></a>
                         </div>
                         <div class="theme-toggle d-flex gap-2  align-items-center mt-2">
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--system-uicons" width="20" height="20" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21">

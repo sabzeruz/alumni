@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Dashboard - Login</title>
+    <title>ALUMNI - Login</title>
 	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -82,7 +82,7 @@
             <div class="modal-content bg-dark">
                 <div class="modal-header">
                     <h5 class="modal-title text-white" id="exampleModalLabel">Sign Up</h5>
-                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
@@ -107,7 +107,7 @@
                             <select class="form-control rounded-0 bg-dark" name="level">
                                 <option value=""> -- Pilih Level User -- </option>
                                 <option value="admin"> Admin </option>
-                                <option value="alumni"> Siswa </option>
+                                <option value="alumni"> Alumni </option>
 								<option value="perusahaan"> Perusahaan </option>
 								<option value="guru"> Guru </option>
                             </select>

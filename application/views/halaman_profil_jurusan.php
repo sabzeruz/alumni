@@ -6,7 +6,7 @@
         </a>
     </header>
 
-    <div class="container justify-content-between d-flex justify-content-between align-items-center mb-3">
+    <div class="container-responsive justify-content-between d-flex justify-content-between align-items-center mb-3">
         <div class="page-heading mt-4 align-items-center">
             <h3>Profil Jurusan</h3>
         </div>

@@ -15,8 +15,8 @@ class Pengaturan extends CI_Controller
         $data['tja'] = $this->pengaturan_model->jumlah_tja();
         $data['mm'] = $this->pengaturan_model->jumlah_mm();
         $data['anm'] = $this->pengaturan_model->jumlah_anm();
-        $isi['jurusan'] = $this->pengaturan_model->panggil(); //select * from supplier
-        $this->load->view('halaman_utama', $isi);
+        $data['jurusan'] = $this->pengaturan_model->panggil(); //select * from supplier
+        $this->load->view('halaman_utama', $data);
         $this->load->view('templates/footer');
     }
 

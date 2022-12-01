@@ -76,7 +76,7 @@
 
     <div id="content" class="mb-4">
         <?php
-        if ($this->session->userdata('level') == 'admin') { ?>
+        if ($this->session->userdata('level') == 'admin' || 'perusahaan') { ?>
             <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addModal">
                 <i class="fas fa-plus"></i> Tambah Data
             </button>
@@ -264,230 +264,239 @@
             </div>
         </div>
 
-                            <!-- PRINT END -->
+        <!-- PRINT END -->
 
+        
 
+        <section class="section">
+        <div class="card">
+            <div class="card-header">
+                Data User
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-striped display responsive nowrap" id="table1" style="width:100%">
+                        <thead>
+                            <tr>
 
-        <div class="table-responsive scrollbar-x">
-            <table class="table table-hover mb-0">
-                <thead class="">
-                    <tr>
-                        <th class="py-3 px-6 text-center">NO</th>
-                        <!-- <th class="py-3 px-6 text-center">ID</th> -->
-                        <th class="py-3 px-6 text-center">NIS</th>
-                        <th class="py-3 px-6 text-center">Nama Siswa</th>
-                        <th class="py-3 px-6 text-center">Kota Lahir</th>
-                        <th class="py-3 px-6 text-center">Tanggal Lahir</th>
-                        <th class="py-3 px-6 text-center">Kesan</th>
-                        <th class="py-3 px-6 text-center">Jurusan</th>
-                        <th class="py-3 px-6 text-center">Foto</th>
-                        <th class="py-3 px-6 text-center">Tahun Lulus</th>
-                        <th class="py-3 px-6 text-center">Instagram</th>
-                        <th class="py-3 px-6 text-center">Facebook</th>
-                        <th class="py-3 px-6 text-center">Twitter</th>
-                        <th class="py-3 px-6 text-center">Line</th>
-                        <th class="py-3 px-6 text-center">Aksi</th>
+                             
+                            <th class="py-3 px-6 text-center">NO</th>
+                                    <!-- <th class="py-3 px-6 text-center">ID</th> -->
+                                    <th class="py-3 px-6 text-center">NIS</th>
+                                    <th class="py-3 px-6 text-center">Nama Siswa</th>
+                                    <th class="py-3 px-6 text-center">Kota Lahir</th>
+                                    <th class="py-3 px-6 text-center">Tanggal Lahir</th>
+                                    <th class="py-3 px-6 text-center">Kesan</th>
+                                    <th class="py-3 px-6 text-center">Jurusan</th>
+                                    <th class="py-3 px-6 text-center">Foto</th>
+                                    <th class="py-3 px-6 text-center">Tahun Lulus</th>
+                                    <th class="py-3 px-6 text-center">Instagram</th>
+                                    <th class="py-3 px-6 text-center">Facebook</th>
+                                    <th class="py-3 px-6 text-center">Twitter</th>
+                                    <th class="py-3 px-6 text-center">Line</th>
+                                    <th class="py-3 px-6 text-center">Aksi</th>
 
-                    </tr>
-                </thead>
-                <?php
-                $no = 1;
-                foreach ($siswa as $tampil) : // :(titik dua) = begin = endforeach;
-                ?>
-                    <tbody>
-                        <tr class="">
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                        $no = 1;
+                        foreach ($siswa as $tampil): // :(titik dua) = begin = endforeach;
+                        ?>
+                            <tr>
                             <td class="py-4 px-4 text-center"><?= $no++ ?></td>
-                            <!-- <td class="py-4 px-4 text-center"> <?= $tampil->id ?></td> -->
-                            <td class="py-4 px-4 text-center"> <?= $tampil->nis ?></td>
-                            <td class="py-4 px-4 text-center"> <?= $tampil->nama_siswa ?></td>
-                            <td class="py-4 px-4 text-center"> <?= $tampil->kota_lahir ?></td>
-                            <td class="py-4 px-4 text-center"> <?= $tampil->tanggal_lahir ?></td>
-                            <td class="py-4 px-4 text-center"> <?= $tampil->kesan ?></td>
-                            <td class="py-4 px-4 text-center"> <?= $tampil->jurusan ?></td>
-                            <td class="py-4 px-4 text-center">
-                                <?php
-                                if (($tampil->foto == '') or ($tampil->foto == '-')) {
-                                ?>  
-                                <a data-bs-toggle="modal" data-bs-target="#view<?= $tampil->id ?>">
-                                    <img src="<?= base_url('assets/upload/photo/avatar.jpg') ?>" class="card-img-top" data-bs-toggle="modal" data-bs-target="#exampleModal" >
-                                </a>
-                                <?php
-                                } else { ?>
-                                    <a data-toggle="modal" data-bs-target="#view<?= $tampil->id ?>" href="<?= base_url('assets/upload/photo/' . $tampil->foto) ?>">
-                                        <img class="rounded d-blockimg-thumbnail" width="125px" height="125px" data-bs-toggle="modal" data-bs-target="#exampleModal" src="<?= base_url('assets/upload/photo/' . $tampil->foto) ?>">
-                                    </a>
-                                    <?php } ?>
-                            </td>
-                            <td class="py-4 px-4 text-center"> <?= $tampil->tahun_lulus ?></td>
-                            <td class="py-4 px-4 text-center"> <?= $tampil->instagram ?></td>
-                            <td class="py-4 px-4 text-center"> <?= $tampil->facebook ?></td>
-                            <td class="py-4 px-4 text-center"> <?= $tampil->twitter ?></td>
-                            <td class="py-4 px-4 text-center"> <?= $tampil->line ?></td>
-                            <td class="py-4 px-4 text-center text-center">
-                                <button class="btn text-center" data-bs-toggle="modal" data-bs-target="#edit<?= $tampil->id ?>"><a>EDIT</a></button>
-                                <button class="btn text-center" data-bs-toggle="modal" data-bs-target="#hapus_data<?= $tampil->id ?>"><a>HAPUS</a></button>
-                            </td>
-
-                        </tr>
+                                        <!-- <td class="py-4 px-4 text-center"> <?= $tampil->id ?></td> -->
+                                        <td class="py-4 px-4 text-center"> <?= $tampil->nis ?></td>
+                                        <td class="py-4 px-4 text-center"> <?= $tampil->nama_siswa ?></td>
+                                        <td class="py-4 px-4 text-center"> <?= $tampil->kota_lahir ?></td>
+                                        <td class="py-4 px-4 text-center"> <?= $tampil->tanggal_lahir ?></td>
+                                        <td class="py-4 px-4 text-center"> <?= $tampil->kesan ?></td>
+                                        <td class="py-4 px-4 text-center"> <?= $tampil->jurusan ?></td>
+                                        <td class="py-4 px-4 text-center">
+                                            <?php
+                                            if (($tampil->foto == '') or ($tampil->foto == '-')) {
+                                            ?>
+                                                <a data-bs-toggle="modal" data-bs-target="#view<?= $tampil->id ?>">
+                                                    <img src="<?= base_url('assets/upload/photo/avatar.jpg') ?>" class="card-img-top" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                                </a>
+                                            <?php
+                                            } else { ?>
+                                                <a data-toggle="modal" data-bs-target="#view<?= $tampil->id ?>" href="<?= base_url('assets/upload/photo/' . $tampil->foto) ?>">
+                                                    <img class="rounded d-blockimg-thumbnail" width="125px" height="125px" data-bs-toggle="modal" data-bs-target="#exampleModal" src="<?= base_url('assets/upload/photo/' . $tampil->foto) ?>">
+                                                </a>
+                                            <?php } ?>
+                                        </td>
+                                        <td class="py-4 px-4 text-center"> <?= $tampil->tahun_lulus ?></td>
+                                        <td class="py-4 px-4 text-center"> <?= $tampil->instagram ?></td>
+                                        <td class="py-4 px-4 text-center"> <?= $tampil->facebook ?></td>
+                                        <td class="py-4 px-4 text-center"> <?= $tampil->twitter ?></td>
+                                        <td class="py-4 px-4 text-center"> <?= $tampil->line ?></td>
+                                        <td class="py-4 px-4 text-center text-center">
+                                            <button class="btn text-center" data-bs-toggle="modal" data-bs-target="#edit<?= $tampil->id ?>"><a>EDIT</a></button>
+                                            <button class="btn text-center" data-bs-toggle="modal" data-bs-target="#hapus_data<?= $tampil->id ?>"><a>HAPUS</a></button>
+                                        </td>
+                            </tr>
+                            <?php
+                        endforeach;
+                        ?>
                         </tbody>
-                    <?php
-                endforeach;
-                    ?>
-            </table>
-        </div>
-
-    </div>
-
-    <!-- modal edit product -->
-
-
-    <?php
-    foreach ($siswa as $edit_data) : // :(titik dua) = begin = endforeach;
-    ?>
-
-        <div class="modal fade" id="edit<?= $edit_data->id ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Edit data siswa</h5>
-                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-
-                    <div class="modal-body">
-                        <form method="post" action="<?= base_url('pengaturan/update_data') ?>" enctype="multipart/form-data">
-                            <div class="form-group">
-                                <label>id</label>
-                                <input type="text" class="form-control" name="id" placeholder="Masukkan Kode Jurusan..." value="<?= $edit_data->id ?>" readonly>
-                            </div>
-
-                            <div class="form-group">
-                                <label>nis</label>
-                                <input type="text" class="form-control" name="nis" placeholder="Masukkan NIS..." value="<?= $edit_data->nis ?>">
-                            </div>
-
-                            <div class="form-group">
-                                <label>Nama Siswa</label>
-                                <input type="text" class="form-control" name="nama_siswa" placeholder="Masukkan Nama Siswa..." value="<?= $edit_data->nama_siswa ?>">
-                            </div>
-                            <div class="form-group">
-                                <label>kota lahir</label>
-                                <input type="text" class="form-control" name="kota_lahir" placeholder="Masukkan Nama Siswa..." value="<?= $edit_data->kota_lahir ?>">
-                            </div>
-                            <div class="form-group">
-                                <label>tanggal lahir</label>
-                                <input type="date" class="form-control" name="tanggal_lahir" placeholder="Masukkan Nama Siswa..." value="<?= $edit_data->tanggal_lahir ?>">
-                            </div>
-                            <div class="form-group">
-                                <label>kesan</label>
-                                <input type="text" class="form-control" name="kesan" placeholder="Masukkan Nama Siswa..." value="<?= $edit_data->kesan ?>">
-                            </div>
-                            <div class="form-group">
-                                <label>jurusan</label>
-                                <select class="form-control rounded-0" name="jurusan">
-                                    <option value=""> -- Pilih -- </option>
-                                    <?php
-                                    foreach ($jurusan as $jur) { ?>
-                                        <option value="<?= $jur->kode_jurusan ?>"><?= $jur->kode_jurusan ?></option>
-                                    <?php } ?>
-                                </select>
-                            </div>
-
-                            <div class="form-group">
-                                <label>Photo</label>
-                                <input type="file" class="form-control" placeholder="Uploaded Foto" name="foto" value="<?= $edit_data->foto ?>" name="foto">
-                            </div>
-
-                    </div>
-
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Save</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </form>
-    <?php
-    endforeach;
-    ?>
-    <!-- modal edit product -->
-
-
-
-    <!-- modal delete product -->
-    <?php
-    foreach ($siswa as $hapus_data) :
-
-
-
-    ?>
-        <div class="modal fade" id="hapus_data<?= $hapus_data->id ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Hapus siswa</h5>
-                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <form method="post" action="<?= base_url('pengaturan/delete_data_siswa') ?>" enctyp="multipart/form-data">
-                            <p>
-                                <label class="form-label">Apakah anda yakin ingin menghapus data?</label>
-                                <input type="hidden" name="id" value="<?= $hapus_data->id ?>">
-
-                            </p>
-                            <div class="modal-footer">
-                            <button type="button" class="btn btn-success" data-bs-dismiss="modal">Kembali</button>
-                                <button type="submit" class="btn btn-danger">Hapus</button>
-                            </div>
-                        </form>
-                    </div>
+                    </table>
                 </div>
             </div>
         </div>
 
-    <?php
-    endforeach
-    ?>
+    </section>
+
+        <!-- modal edit product -->
+
+
+        <?php
+        foreach ($siswa as $edit_data) : // :(titik dua) = begin = endforeach;
+        ?>
+
+            <div class="modal fade" id="edit<?= $edit_data->id ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Edit data siswa</h5>
+                            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+
+                        <div class="modal-body">
+                            <form method="post" action="<?= base_url('pengaturan/update_data') ?>" enctype="multipart/form-data">
+                                <div class="form-group">
+                                    <label>id</label>
+                                    <input type="text" class="form-control" name="id" placeholder="Masukkan Kode Jurusan..." value="<?= $edit_data->id ?>" readonly>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>nis</label>
+                                    <input type="text" class="form-control" name="nis" placeholder="Masukkan NIS..." value="<?= $edit_data->nis ?>">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Nama Siswa</label>
+                                    <input type="text" class="form-control" name="nama_siswa" placeholder="Masukkan Nama Siswa..." value="<?= $edit_data->nama_siswa ?>">
+                                </div>
+                                <div class="form-group">
+                                    <label>kota lahir</label>
+                                    <input type="text" class="form-control" name="kota_lahir" placeholder="Masukkan Nama Siswa..." value="<?= $edit_data->kota_lahir ?>">
+                                </div>
+                                <div class="form-group">
+                                    <label>tanggal lahir</label>
+                                    <input type="date" class="form-control" name="tanggal_lahir" placeholder="Masukkan Nama Siswa..." value="<?= $edit_data->tanggal_lahir ?>">
+                                </div>
+                                <div class="form-group">
+                                    <label>kesan</label>
+                                    <input type="text" class="form-control" name="kesan" placeholder="Masukkan Nama Siswa..." value="<?= $edit_data->kesan ?>">
+                                </div>
+                                <div class="form-group">
+                                    <label>jurusan</label>
+                                    <select class="form-control rounded-0" name="jurusan">
+                                        <option value=""> -- Pilih -- </option>
+                                        <?php
+                                        foreach ($jurusan as $jur) { ?>
+                                            <option value="<?= $jur->kode_jurusan ?>"><?= $jur->kode_jurusan ?></option>
+                                        <?php } ?>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Photo</label>
+                                    <input type="file" class="form-control" placeholder="Uploaded Foto" name="foto" value="<?= $edit_data->foto ?>" name="foto">
+                                </div>
+
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </form>
+        <?php
+        endforeach;
+        ?>
+        <!-- modal edit product -->
+
+
+
+        <!-- modal delete product -->
+        <?php
+        foreach ($siswa as $hapus_data) :
+
+
+
+        ?>
+            <div class="modal fade" id="hapus_data<?= $hapus_data->id ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Hapus siswa</h5>
+                            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form method="post" action="<?= base_url('pengaturan/delete_data_siswa') ?>" enctyp="multipart/form-data">
+                                <p>
+                                    <label class="form-label">Apakah anda yakin ingin menghapus data?</label>
+                                    <input type="hidden" name="id" value="<?= $hapus_data->id ?>">
+
+                                </p>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">Kembali</button>
+                                    <button type="submit" class="btn btn-danger">Hapus</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <?php
+        endforeach
+        ?>
 
         <!-- modal delete product -->
 
-<?php
-  $no = 1;
-    foreach ($siswa as $view_foto) : // :(titik dua) = begin = endforeach;
-    ?>
+        <?php
+        $no = 1;
+        foreach ($siswa as $view_foto) : // :(titik dua) = begin = endforeach;
+        ?>
 
-<div class="modal fade" id="view<?= $edit_data->id ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-      <?php
-                                if (($view_foto->foto == '') or ($view_foto->foto == '-')) {
-                                ?>
-                                    <img src="<?= base_url('assets/images/default.jpg') ?>"  style="height:221px;">
-                            
-                                <?php
-                                } else { ?>
-                                        <img class="rounded d-blockimg-thumbnail" width="125px" height="150px"   src="<?= base_url('assets/upload/photo/' . $view_foto->foto) ?>">
-                                    <?php } ?>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
+            <div class="modal fade" id="view<?= $edit_data->id ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <?php
+                            if (($view_foto->foto == '') or ($view_foto->foto == '-')) {
+                            ?>
+                                <img src="<?= base_url('assets/images/default.jpg') ?>" style="height:221px;">
 
-<?php
-                endforeach;
-                    ?>
+                            <?php
+                            } else { ?>
+                                <img class="rounded d-blockimg-thumbnail" width="125px" height="150px" src="<?= base_url('assets/upload/photo/' . $view_foto->foto) ?>">
+                            <?php } ?>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <?php
+        endforeach;
+        ?>

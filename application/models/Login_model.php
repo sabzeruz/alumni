@@ -6,13 +6,17 @@ class Login_model extends CI_Model
     public function go_login()
     {
         $email = $this->input->post('username', true);
-        $pw = $this->input->post('password', true);
+        $pw = md5($this->input->post('password', true));
 
         $this->db->where('username', $email);
         $user = $this->db->get('user')->row_array();
 
         if ($user) {
-            if (md5($pw, $user['password'])) {
+            if ($user['status'] == '0') {
+                $this->session->set_flashdata('pesan', 'Akun anda belum di validasi oleh admin...');
+                redirect('login');
+            }
+            if ($pw == $user['password']) {
                 $data = [
                     'id_user' => $user['id_user'],
                     'nama' => $user['nama'],
@@ -21,13 +25,13 @@ class Login_model extends CI_Model
                     'login' => 1,
                 ];
                 $this->session->set_userdata($data);
-                redirect('pengaturan/beranda');
+                redirect('pengaturan');
             } else {
-                $this->session->set_flashdata('pesan', 'Password Salah...');
+                $this->session->set_flashdata('pesan', 'Data tidak cocok!');
                 redirect('login');
             }
         } else {
-            $this->session->set_flashdata('pesan', 'Username tidak terdaftar...');
+            $this->session->set_flashdata('pesan', 'Data tidak cocok!');
             redirect('login');
         }
     }
