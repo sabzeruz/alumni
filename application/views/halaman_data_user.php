@@ -325,7 +325,7 @@ foreach ($user as $hapus_data):
                 <form method="post" action="<?= base_url('pengaturan/delete_data_user') ?>"
                     enctyp="multipart/form-data">
                     <p>
-                        <label class="form-label">Apakah anda yakin ingin menghapus data?</label>
+                        <label class="form-label">Are u sure u want to delete this?</label>
                         <input type="hidden" name="id_user" value="<?= $hapus_data->id_user ?>">
 
                     </p>
